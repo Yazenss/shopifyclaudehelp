@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "contact": {
-      "type": "funke-contact",
+    "waitlist": {
+      "type": "funke-waitlist",
       "settings": {}
     }
   },
   "order": [
-    "contact"
+    "waitlist"
   ]
 }

@@ -1,0 +1,186 @@
+<style>
+  .funke-hiw {
+    padding: 8rem 4rem;
+    background: #1E1E24;
+    position: relative;
+  }
+
+  .funke-hiw::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.25), transparent);
+  }
+
+  .funke-hiw__inner {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  .funke-hiw__header {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  .funke-hiw__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .funke-hiw__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .funke-hiw__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  /* Connecting line between steps */
+  .funke-hiw__steps::before {
+    content: '';
+    position: absolute;
+    top: 3.5rem;
+    left: calc(33.33% / 2);
+    right: calc(33.33% / 2);
+    height: 1px;
+    background: rgba(201, 168, 76, 0.2);
+    z-index: 0;
+  }
+
+  .funke-hiw__step {
+    text-align: center;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funke-hiw__step-num-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    width: 7rem;
+    height: 7rem;
+    background: #0D0D0D;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    position: relative;
+    transition: border-color 0.3s;
+  }
+
+  .funke-hiw__step:hover .funke-hiw__step-num-wrap {
+    border-color: #C9A84C;
+  }
+
+  .funke-hiw__step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    color: #C9A84C;
+    line-height: 1;
+  }
+
+  .funke-hiw__step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 1.2rem;
+    line-height: 1;
+  }
+
+  .funke-hiw__step-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.5);
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-hiw {
+      padding: 6rem 2rem;
+    }
+    .funke-hiw__steps {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    .funke-hiw__steps::before {
+      display: none;
+    }
+    .funke-hiw__step {
+      padding: 0;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+    .funke-hiw__step-num-wrap {
+      flex-shrink: 0;
+      margin: 0;
+    }
+  }
+</style>
+
+<section class="funke-hiw">
+  <div class="funke-hiw__inner">
+    <div class="funke-hiw__header">
+      <span class="funke-hiw__label">Simple System</span>
+      <h2 class="funke-hiw__title">HOW IT WORKS</h2>
+    </div>
+
+    <div class="funke-hiw__steps">
+      <div class="funke-hiw__step">
+        <div class="funke-hiw__step-num-wrap">
+          <span class="funke-hiw__step-num">01</span>
+        </div>
+        <h3 class="funke-hiw__step-title">Clip to Your Vent</h3>
+        <p class="funke-hiw__step-desc">Attach the premium zinc alloy diffuser clip to any car vent. It snaps in securely and stays permanently.</p>
+      </div>
+      <div class="funke-hiw__step">
+        <div class="funke-hiw__step-num-wrap">
+          <span class="funke-hiw__step-num">02</span>
+        </div>
+        <h3 class="funke-hiw__step-title">Add Fragrance Oil</h3>
+        <p class="funke-hiw__step-desc">Place a cotton pad into the diffuser and add 3–4 drops of your chosen FUNKE fragrance oil.</p>
+      </div>
+      <div class="funke-hiw__step">
+        <div class="funke-hiw__step-num-wrap">
+          <span class="funke-hiw__step-num">03</span>
+        </div>
+        <h3 class="funke-hiw__step-title">Drive & Enjoy</h3>
+        <p class="funke-hiw__step-desc">Your cabin air system disperses the fragrance as you drive. Lasts 30–60 days. Refill when ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE How It Works",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "FUNKE How It Works"
+    }
+  ]
+}
+{% endschema %}

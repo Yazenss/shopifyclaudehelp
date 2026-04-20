@@ -1,0 +1,238 @@
+<style>
+  .funke-nl {
+    padding: 11rem 0;
+    background: #0D0D0D;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .funke-nl::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+  }
+
+  /* Giant watermark */
+  .funke-nl__bg-text {
+    position: absolute;
+    bottom: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28rem;
+    color: rgba(201, 168, 76, 0.03);
+    white-space: nowrap;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 0.1em;
+  }
+
+  .funke-nl__inner {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funke-nl__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .funke-nl__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 6.5vw, 7.5rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 1.5rem;
+    line-height: 1;
+  }
+
+  .funke-nl__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(245, 240, 232, 0.5);
+    margin: 0 0 5rem;
+  }
+
+  .funke-nl__form {
+    display: flex;
+    max-width: 52rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .funke-nl__input {
+    flex: 1;
+    background: #1E1E24;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-right: none;
+    color: #F5F0E8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    padding: 1.8rem 2.2rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .funke-nl__input::placeholder {
+    color: rgba(245, 240, 232, 0.25);
+    letter-spacing: 0.04em;
+  }
+
+  .funke-nl__input:focus {
+    border-color: rgba(201, 168, 76, 0.55);
+  }
+
+  .funke-nl__btn {
+    background: #C9A84C;
+    color: #0D0D0D;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.12em;
+    padding: 1.8rem 3.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .funke-nl__btn:hover {
+    background: #b8923f;
+  }
+
+  .funke-nl__note {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: rgba(245, 240, 232, 0.22);
+    letter-spacing: 0.06em;
+  }
+
+  /* Success / error messages */
+  .funke-nl__success {
+    display: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: #C9A84C;
+    margin-top: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-nl {
+      padding: 7rem 0;
+    }
+    .funke-nl__inner {
+      padding: 0 2rem;
+    }
+    .funke-nl__form {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .funke-nl__input {
+      border-right: 1px solid rgba(201, 168, 76, 0.25);
+    }
+    .funke-nl__btn {
+      width: 100%;
+      padding: 1.8rem;
+    }
+    .funke-nl__subtitle {
+      font-size: 1.55rem;
+    }
+  }
+</style>
+
+<section class="funke-nl">
+  <span class="funke-nl__bg-text" aria-hidden="true">FUNKE</span>
+  <div class="funke-nl__inner">
+    <span class="funke-nl__label">Stay Connected</span>
+    <h2 class="funke-nl__title">{{ section.settings.title | default: 'JOIN THE FUNKE COMMUNITY' }}</h2>
+    <p class="funke-nl__subtitle">{{ section.settings.subtitle | default: 'Be first to know about new scent drops and exclusive offers.' }}</p>
+
+    {%- form 'customer', class: 'funke-nl__form', id: 'FunkeNewsletterForm' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      {%- if form.posted_successfully? -%}
+        <p class="funke-nl__success" style="display:block;">You're in. Welcome to FUNKE.</p>
+      {%- endif -%}
+      <input
+        type="email"
+        name="contact[email]"
+        class="funke-nl__input"
+        id="NewsletterEmail"
+        placeholder="{{ section.settings.placeholder | default: 'your@email.com' }}"
+        value="{{ form.email }}"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        aria-label="Email address"
+        required
+      >
+      <button type="submit" class="funke-nl__btn" name="commit">
+        {{ section.settings.button_label | default: 'JOIN' }}
+      </button>
+    {%- endform -%}
+    <p class="funke-nl__note">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Newsletter",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "JOIN THE FUNKE COMMUNITY"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Be first to know about new scent drops and exclusive offers."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email Placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "JOIN"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FUNKE Newsletter",
+      "settings": {
+        "title": "JOIN THE FUNKE COMMUNITY",
+        "subtitle": "Be first to know about new scent drops and exclusive offers."
+      }
+    }
+  ]
+}
+{% endschema %}

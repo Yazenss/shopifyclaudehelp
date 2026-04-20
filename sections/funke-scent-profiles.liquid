@@ -1,0 +1,261 @@
+<style>
+  .funke-scents {
+    padding: 9rem 0;
+    background: #1E1E24;
+    position: relative;
+  }
+
+  .funke-scents::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+  }
+
+  .funke-scents__inner {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .funke-scents__header {
+    text-align: center;
+    margin-bottom: 7rem;
+  }
+
+  .funke-scents__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .funke-scents__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 6vw, 7rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .funke-scents__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  /* ---- Scent Card ---- */
+  .funke-scard {
+    background: #0D0D0D;
+    padding: 5.5rem 5rem;
+    position: relative;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.35s;
+  }
+
+  .funke-scard:hover {
+    border-color: rgba(201, 168, 76, 0.42);
+    transform: translateY(-4px);
+  }
+
+  .funke-scard__bg-num {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12rem;
+    color: rgba(201, 168, 76, 0.045);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .funke-scard__name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 0.6rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funke-scard__accent {
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background: #C9A84C;
+    margin-bottom: 2rem;
+  }
+
+  .funke-scard__tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.6rem;
+    letter-spacing: 0.1em;
+    color: #C9A84C;
+    margin: 0 0 1.8rem;
+    text-transform: uppercase;
+  }
+
+  .funke-scard__desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(245, 240, 232, 0.55);
+    margin: 0 0 3rem;
+    max-width: 40rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funke-scard__notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .funke-scard__note {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.45);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 0.5rem 1.2rem;
+  }
+
+  .funke-scard__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .funke-scard__cta::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+
+  .funke-scard__cta:hover {
+    gap: 1.8rem;
+    color: #C9A84C;
+  }
+
+  .funke-scard__cta:hover::after {
+    transform: translateX(4px);
+  }
+
+  .funke-scard__bottom-line {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: #C9A84C;
+    transition: width 0.5s ease;
+  }
+
+  .funke-scard:hover .funke-scard__bottom-line {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-scents {
+      padding: 6rem 0;
+    }
+    .funke-scents__inner {
+      padding: 0 2rem;
+    }
+    .funke-scents__grid {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+    .funke-scard {
+      padding: 4rem 3rem;
+    }
+    .funke-scard__name {
+      font-size: 5rem;
+    }
+  }
+</style>
+
+<section class="funke-scents">
+  <div class="funke-scents__inner">
+
+    <div class="funke-scents__header">
+      <span class="funke-scents__label">Our Fragrances</span>
+      <h2 class="funke-scents__title">THE SCENTS</h2>
+    </div>
+
+    <div class="funke-scents__grid">
+
+      <!-- LEDER -->
+      <div class="funke-scard">
+        <span class="funke-scard__bg-num">01</span>
+        <div class="funke-scard__name">LEDER</div>
+        <span class="funke-scard__accent"></span>
+        <div class="funke-scard__tagline">Warm. Woody. Sophisticated.</div>
+        <p class="funke-scard__desc">The rich smell of premium leather. A scent built for BMW M-series interiors, Porsche cockpits, Mercedes S-Class cabins. Dark, complex, and unmistakably European.</p>
+        <div class="funke-scard__notes">
+          <span class="funke-scard__note">Leather</span>
+          <span class="funke-scard__note">Cedarwood</span>
+          <span class="funke-scard__note">Sandalwood</span>
+          <span class="funke-scard__note">Amber</span>
+          <span class="funke-scard__note">Dark Musk</span>
+        </div>
+        <a href="/collections/all" class="funke-scard__cta">Shop LEDER</a>
+        <div class="funke-scard__bottom-line"></div>
+      </div>
+
+      <!-- AUTOBAHN -->
+      <div class="funke-scard">
+        <span class="funke-scard__bg-num">02</span>
+        <div class="funke-scard__name">AUTOBAHN</div>
+        <span class="funke-scard__accent"></span>
+        <div class="funke-scard__tagline">Fresh. Sharp. Alive.</div>
+        <p class="funke-scard__desc">Open road energy. The feeling of speed and open air. Crisp, invigorating, and alive. For the drive where there are no limits and no destination — just the road.</p>
+        <div class="funke-scard__notes">
+          <span class="funke-scard__note">Bergamot</span>
+          <span class="funke-scard__note">Vetiver</span>
+          <span class="funke-scard__note">Green Tea</span>
+          <span class="funke-scard__note">Ocean Air</span>
+          <span class="funke-scard__note">White Musk</span>
+        </div>
+        <a href="/collections/all" class="funke-scard__cta">Shop AUTOBAHN</a>
+        <div class="funke-scard__bottom-line"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Scent Profiles",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "FUNKE Scent Profiles"
+    }
+  ]
+}
+{% endschema %}

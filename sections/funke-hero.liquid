@@ -1,0 +1,349 @@
+<style>
+  .funke-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: #0D0D0D;
+  }
+
+  .funke-hero__bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .funke-hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+  }
+
+  .funke-hero__bg-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1a1a22 40%, #0D0D0D 100%);
+  }
+
+  .funke-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(13, 13, 13, 0.92) 0%,
+      rgba(13, 13, 13, 0.65) 50%,
+      rgba(13, 13, 13, 0.2) 100%
+    );
+    z-index: 1;
+  }
+
+  .funke-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 8rem;
+    max-width: 130rem;
+    width: 100%;
+  }
+
+  .funke-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .funke-hero__eyebrow-line {
+    display: block;
+    width: 4rem;
+    height: 1px;
+    background: #C9A84C;
+  }
+
+  .funke-hero__eyebrow-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+  }
+
+  .funke-hero__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(7.5rem, 14vw, 16rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 2.5rem;
+    max-width: 90rem;
+  }
+
+  .funke-hero__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(245, 240, 232, 0.65);
+    margin-bottom: 5rem;
+    max-width: 52rem;
+  }
+
+  .funke-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .funke-hero__cta-primary {
+    display: inline-block;
+    background: #C9A84C;
+    color: #0D0D0D;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.16em;
+    padding: 1.7rem 4.5rem;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .funke-hero__cta-primary:hover {
+    background: #b8923f;
+    transform: translateY(-2px);
+    color: #0D0D0D;
+  }
+
+  .funke-hero__cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .funke-hero__cta-secondary::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+
+  .funke-hero__cta-secondary:hover {
+    color: #C9A84C;
+  }
+
+  .funke-hero__cta-secondary:hover::after {
+    transform: translateX(5px);
+  }
+
+  .funke-hero__scroll {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .funke-hero__scroll-line {
+    width: 1px;
+    height: 5rem;
+    background: linear-gradient(to bottom, rgba(201, 168, 76, 0.7), transparent);
+    animation: funkeScrollPulse 2.2s ease-in-out infinite;
+  }
+
+  .funke-hero__scroll-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.3);
+  }
+
+  @keyframes funkeScrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Corner badge */
+  .funke-hero__badge {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .funke-hero__badge-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    color: rgba(245, 240, 232, 0.08);
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 989px) {
+    .funke-hero__content {
+      padding: 0 4rem;
+    }
+    .funke-hero__title {
+      font-size: clamp(6rem, 16vw, 9rem);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-hero {
+      min-height: 88vh;
+      align-items: flex-end;
+      padding-bottom: 6rem;
+    }
+    .funke-hero__content {
+      padding: 0 2.4rem;
+    }
+    .funke-hero__title {
+      font-size: 7rem;
+    }
+    .funke-hero__subtitle {
+      font-size: 1.55rem;
+    }
+    .funke-hero__badge {
+      display: none;
+    }
+    .funke-hero__scroll {
+      display: none;
+    }
+  }
+</style>
+
+<section class="funke-hero">
+  <div class="funke-hero__bg-wrap">
+    {%- if section.settings.image != blank -%}
+      <img
+        src="{{ section.settings.image | image_url: width: 2400 }}"
+        alt="{{ section.settings.image.alt | escape | default: 'FUNKE — Premium Car Fragrance' }}"
+        class="funke-hero__bg-img"
+        loading="eager"
+        fetchpriority="high"
+        width="2400"
+        height="1350"
+      >
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'funke-hero__bg-img' }}
+    {%- endif -%}
+  </div>
+
+  <div class="funke-hero__overlay"></div>
+
+  <div class="funke-hero__content">
+    <div class="funke-hero__eyebrow">
+      <span class="funke-hero__eyebrow-line"></span>
+      <span class="funke-hero__eyebrow-text">{{ section.settings.eyebrow | default: 'Engineered for the drive' }}</span>
+    </div>
+    <h1 class="funke-hero__title">{{ section.settings.title | default: 'IGNITE YOUR DRIVE' }}</h1>
+    <p class="funke-hero__subtitle">{{ section.settings.subtitle | default: 'Premium car fragrances engineered for European car enthusiasts.' }}</p>
+    <div class="funke-hero__actions">
+      <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="funke-hero__cta-primary">
+        {{ section.settings.button_label | default: 'SHOP NOW' }}
+      </a>
+      {%- if section.settings.secondary_link != blank -%}
+        <a href="{{ section.settings.secondary_link }}" class="funke-hero__cta-secondary">
+          {{ section.settings.secondary_label | default: 'Our Story' }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="funke-hero__scroll" aria-hidden="true">
+    <div class="funke-hero__scroll-line"></div>
+    <span class="funke-hero__scroll-text">Scroll</span>
+  </div>
+
+  <div class="funke-hero__badge" aria-hidden="true">
+    <span class="funke-hero__badge-text">FUNKE</span>
+    <span class="funke-hero__badge-text">MMXXVI</span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Hero",
+  "tag": "section",
+  "class": "funke-hero-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Background Image",
+      "info": "Recommended: dark luxury car interior, 2400×1350px"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Engineered for the drive"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Headline",
+      "default": "IGNITE YOUR DRIVE"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Premium car fragrances engineered for European car enthusiasts."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary Button Label",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary Link Label",
+      "default": "Our Story"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FUNKE Hero",
+      "settings": {
+        "eyebrow": "Engineered for the drive",
+        "title": "IGNITE YOUR DRIVE",
+        "subtitle": "Premium car fragrances engineered for European car enthusiasts.",
+        "button_label": "SHOP NOW",
+        "secondary_label": "Our Story"
+      }
+    }
+  ]
+}
+{% endschema %}

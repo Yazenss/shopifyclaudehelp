@@ -1,0 +1,313 @@
+<style>
+  .funke-contact-page {
+    background: #0D0D0D;
+    padding: 10rem 4rem;
+  }
+
+  .funke-contact-page__inner {
+    max-width: 110rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 10rem;
+    align-items: flex-start;
+  }
+
+  /* ---- Left: Info ---- */
+  .funke-contact-page__info {}
+
+  .funke-contact-page__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+
+  .funke-contact-page__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 8vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 3rem;
+  }
+
+  .funke-contact-page__accent {
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background: #C9A84C;
+    margin-bottom: 3rem;
+  }
+
+  .funke-contact-page__subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(245, 240, 232, 0.55);
+    margin-bottom: 5rem;
+  }
+
+  .funke-contact-page__details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .funke-contact-page__detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .funke-contact-page__detail-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+  }
+
+  .funke-contact-page__detail-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    color: rgba(245, 240, 232, 0.7);
+  }
+
+  .funke-contact-page__detail-value a {
+    color: #C9A84C;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .funke-contact-page__detail-value a:hover {
+    opacity: 0.75;
+  }
+
+  /* ---- Right: Form ---- */
+  .funke-contact-page__form-wrap {
+    background: #1E1E24;
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    padding: 5rem;
+  }
+
+  .funke-contact-page__form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.06em;
+    color: #F5F0E8;
+    margin: 0 0 3.5rem;
+    text-transform: uppercase;
+  }
+
+  .funke-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .funke-contact-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .funke-contact-form__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+  }
+
+  .funke-contact-form__input,
+  .funke-contact-form__textarea {
+    background: #0D0D0D;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    color: #F5F0E8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    padding: 1.5rem 1.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+  }
+
+  .funke-contact-form__input::placeholder,
+  .funke-contact-form__textarea::placeholder {
+    color: rgba(245, 240, 232, 0.2);
+  }
+
+  .funke-contact-form__input:focus,
+  .funke-contact-form__textarea:focus {
+    border-color: rgba(201, 168, 76, 0.5);
+  }
+
+  .funke-contact-form__textarea {
+    min-height: 14rem;
+    resize: vertical;
+    line-height: 1.6;
+  }
+
+  .funke-contact-form__submit {
+    background: #C9A84C;
+    color: #0D0D0D;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.14em;
+    padding: 1.8rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .funke-contact-form__submit:hover {
+    background: #b8923f;
+  }
+
+  .funke-contact-form__success {
+    display: none;
+    background: rgba(201, 168, 76, 0.08);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: #C9A84C;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  @media screen and (max-width: 989px) {
+    .funke-contact-page__inner {
+      grid-template-columns: 1fr;
+      gap: 6rem;
+    }
+    .funke-contact-page__form-wrap {
+      padding: 4rem 3rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-contact-page {
+      padding: 7rem 2rem;
+    }
+  }
+</style>
+
+<section class="funke-contact-page">
+  <div class="funke-contact-page__inner">
+
+    <!-- Info Column -->
+    <div class="funke-contact-page__info">
+      <span class="funke-contact-page__label">Reach Out</span>
+      <h1 class="funke-contact-page__title">GET IN TOUCH</h1>
+      <span class="funke-contact-page__accent"></span>
+      <p class="funke-contact-page__subtext">We respond within 24 hours. Whether you have a question about your order, want to know more about our scents, or just want to talk cars — we're here.</p>
+
+      <div class="funke-contact-page__details">
+        <div class="funke-contact-page__detail-item">
+          <span class="funke-contact-page__detail-label">Email</span>
+          <span class="funke-contact-page__detail-value">
+            <a href="mailto:info@funkeshop.com">info@funkeshop.com</a>
+          </span>
+        </div>
+        <div class="funke-contact-page__detail-item">
+          <span class="funke-contact-page__detail-label">Response Time</span>
+          <span class="funke-contact-page__detail-value">Within 24 hours</span>
+        </div>
+        <div class="funke-contact-page__detail-item">
+          <span class="funke-contact-page__detail-label">Brand</span>
+          <span class="funke-contact-page__detail-value">FUNKE LLC — Where Performance Meets Fragrance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Column -->
+    <div class="funke-contact-page__form-wrap">
+      <h2 class="funke-contact-page__form-title">Send a Message</h2>
+
+      {%- form 'contact', id: 'FunkeContactForm' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="funke-contact-form__success" style="display:block;">
+            Message received. We'll get back to you within 24 hours.
+          </div>
+        {%- endif -%}
+
+        <div class="funke-contact-form">
+          <div class="funke-contact-form__field">
+            <label for="ContactName" class="funke-contact-form__label">Name</label>
+            <input
+              type="text"
+              id="ContactName"
+              name="contact[name]"
+              class="funke-contact-form__input"
+              placeholder="Your name"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="funke-contact-form__field">
+            <label for="ContactEmail" class="funke-contact-form__label">Email <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="ContactEmail"
+              name="contact[email]"
+              class="funke-contact-form__input"
+              placeholder="your@email.com"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="funke-contact-form__field">
+            <label for="ContactMessage" class="funke-contact-form__label">Message <span aria-hidden="true">*</span></label>
+            <textarea
+              id="ContactMessage"
+              name="contact[body]"
+              class="funke-contact-form__textarea"
+              placeholder="Tell us how we can help..."
+              rows="6"
+              required
+            >{{ form.body }}</textarea>
+          </div>
+
+          <button type="submit" class="funke-contact-form__submit">SEND MESSAGE</button>
+        </div>
+      {%- endform -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Contact",
+  "tag": "section",
+  "limit": 1,
+  "settings": [],
+  "presets": [
+    {
+      "name": "FUNKE Contact"
+    }
+  ]
+}
+{% endschema %}

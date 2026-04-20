@@ -1,0 +1,266 @@
+<style>
+  .funke-wl {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0D0D0D;
+    padding: 6rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Radial glow */
+  .funke-wl::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Corner gold lines */
+  .funke-wl::after {
+    content: '';
+    position: absolute;
+    top: 4rem; left: 4rem;
+    width: 8rem; height: 8rem;
+    border-top: 1px solid rgba(201, 168, 76, 0.25);
+    border-left: 1px solid rgba(201, 168, 76, 0.25);
+    pointer-events: none;
+  }
+
+  .funke-wl__corner-br {
+    position: absolute;
+    bottom: 4rem; right: 4rem;
+    width: 8rem; height: 8rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+    border-right: 1px solid rgba(201, 168, 76, 0.25);
+    pointer-events: none;
+  }
+
+  .funke-wl__inner {
+    max-width: 68rem;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo bar */
+  .funke-wl__logobar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 7rem;
+  }
+
+  .funke-wl__logobar-line {
+    flex: 1;
+    max-width: 10rem;
+    height: 1px;
+    background: rgba(201, 168, 76, 0.25);
+  }
+
+  .funke-wl__logobar-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.55em;
+    color: #C9A84C;
+  }
+
+  .funke-wl__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .funke-wl__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5.5rem, 11vw, 11rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0 0 2.5rem;
+  }
+
+  .funke-wl__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(245, 240, 232, 0.55);
+    margin: 0 0 2rem;
+  }
+
+  .funke-wl__divider {
+    display: block;
+    width: 6rem;
+    height: 1px;
+    background: rgba(201, 168, 76, 0.35);
+    margin: 0 auto 2.5rem;
+  }
+
+  .funke-wl__body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.45);
+    margin: 0 0 4.5rem;
+  }
+
+  .funke-wl__body strong {
+    color: #C9A84C;
+    font-weight: 600;
+  }
+
+  .funke-wl__form {
+    display: flex;
+    max-width: 52rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .funke-wl__input {
+    flex: 1;
+    background: #1E1E24;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-right: none;
+    color: #F5F0E8;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    padding: 1.9rem 2.2rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .funke-wl__input::placeholder {
+    color: rgba(245, 240, 232, 0.22);
+    letter-spacing: 0.04em;
+  }
+
+  .funke-wl__input:focus {
+    border-color: rgba(201, 168, 76, 0.5);
+  }
+
+  .funke-wl__btn {
+    background: #C9A84C;
+    color: #0D0D0D;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.1em;
+    padding: 1.9rem 3.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .funke-wl__btn:hover {
+    background: #b8923f;
+  }
+
+  .funke-wl__note {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: rgba(245, 240, 232, 0.2);
+    letter-spacing: 0.06em;
+  }
+
+  .funke-wl__success {
+    display: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    color: #C9A84C;
+    letter-spacing: 0.05em;
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-wl {
+      padding: 5rem 2.4rem;
+    }
+    .funke-wl__form {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .funke-wl__input {
+      border-right: 1px solid rgba(201, 168, 76, 0.25);
+    }
+    .funke-wl__btn {
+      width: 100%;
+      padding: 1.9rem;
+    }
+    .funke-wl__corner-br {
+      display: none;
+    }
+  }
+</style>
+
+<section class="funke-wl">
+  <div class="funke-wl__corner-br" aria-hidden="true"></div>
+
+  <div class="funke-wl__inner">
+
+    <div class="funke-wl__logobar">
+      <div class="funke-wl__logobar-line"></div>
+      <span class="funke-wl__logobar-text">FUNKE</span>
+      <div class="funke-wl__logobar-line"></div>
+    </div>
+
+    <span class="funke-wl__label">Early Access</span>
+    <h1 class="funke-wl__title">FUNKE IS COMING.</h1>
+    <p class="funke-wl__subtitle">Premium car fragrances engineered for European car enthusiasts.</p>
+    <span class="funke-wl__divider"></span>
+    <p class="funke-wl__body">Join the waitlist for exclusive early access and <strong>15% off your first order</strong>.</p>
+
+    {%- form 'customer', class: 'funke-wl__form', id: 'FunkeWaitlistForm' -%}
+      <input type="hidden" name="contact[tags]" value="waitlist">
+      {%- if form.posted_successfully? -%}
+        <p class="funke-wl__success" style="display:block;">You're on the list. We'll be in touch.</p>
+      {%- endif -%}
+      <input
+        type="email"
+        name="contact[email]"
+        class="funke-wl__input"
+        id="WaitlistEmail"
+        placeholder="Enter your email"
+        value="{{ form.email }}"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        aria-label="Email address"
+        required
+      >
+      <button type="submit" class="funke-wl__btn" name="commit">JOIN THE WAITLIST</button>
+    {%- endform -%}
+    <p class="funke-wl__note">No spam. Exclusive access only.</p>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Waitlist",
+  "tag": "section",
+  "limit": 1,
+  "settings": [],
+  "presets": [
+    {
+      "name": "FUNKE Waitlist"
+    }
+  ]
+}
+{% endschema %}

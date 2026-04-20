@@ -1,0 +1,204 @@
+<style>
+  .funke-story-teaser {
+    padding: 11rem 0;
+    background: #0D0D0D;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .funke-story-teaser::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+  }
+
+  /* Large watermark text */
+  .funke-story-teaser::after {
+    content: 'FUNKE';
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28rem;
+    color: rgba(201, 168, 76, 0.025);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 0.02em;
+  }
+
+  .funke-story-teaser__inner {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 10rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funke-story-teaser__accent {
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background: #C9A84C;
+    margin-bottom: 3.5rem;
+  }
+
+  .funke-story-teaser__heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 8vw, 9.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    margin: 0;
+  }
+
+  .funke-story-teaser__right {
+    padding-left: 3rem;
+    border-left: 1px solid rgba(201, 168, 76, 0.18);
+  }
+
+  .funke-story-teaser__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .funke-story-teaser__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(245, 240, 232, 0.65);
+    margin: 0 0 4rem;
+  }
+
+  .funke-story-teaser__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    text-decoration: none;
+    transition: gap 0.25s ease;
+  }
+
+  .funke-story-teaser__cta::after {
+    content: '→';
+    font-size: 1.5rem;
+    transition: transform 0.25s ease;
+  }
+
+  .funke-story-teaser__cta:hover {
+    gap: 2.2rem;
+    color: #C9A84C;
+  }
+
+  .funke-story-teaser__cta:hover::after {
+    transform: translateX(5px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .funke-story-teaser__inner {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+    .funke-story-teaser__right {
+      padding-left: 0;
+      padding-top: 4rem;
+      border-left: none;
+      border-top: 1px solid rgba(201, 168, 76, 0.18);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-story-teaser {
+      padding: 7rem 0;
+    }
+    .funke-story-teaser__inner {
+      padding: 0 2rem;
+    }
+    .funke-story-teaser__heading {
+      font-size: 5.5rem;
+    }
+    .funke-story-teaser__text {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+
+<section class="funke-story-teaser">
+  <div class="funke-story-teaser__inner">
+
+    <div class="funke-story-teaser__left">
+      <span class="funke-story-teaser__accent"></span>
+      <h2 class="funke-story-teaser__heading">{{ section.settings.heading | default: 'BORN FROM AN OBSESSION.' }}</h2>
+    </div>
+
+    <div class="funke-story-teaser__right">
+      <span class="funke-story-teaser__label">The FUNKE Story</span>
+      <p class="funke-story-teaser__text">{{ section.settings.text | default: 'FUNKE was built for the drivers who care about every detail — from the stitching on the seats to the scent of the cabin. Where Performance Meets Fragrance.' }}</p>
+      <a href="{{ section.settings.cta_link | default: '/pages/our-story' }}" class="funke-story-teaser__cta">
+        {{ section.settings.cta_label | default: 'OUR STORY' }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FUNKE Brand Story Teaser",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BORN FROM AN OBSESSION."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Body Text",
+      "default": "FUNKE was built for the drivers who care about every detail — from the stitching on the seats to the scent of the cabin. Where Performance Meets Fragrance."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "OUR STORY"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FUNKE Brand Story Teaser",
+      "settings": {
+        "heading": "BORN FROM AN OBSESSION.",
+        "cta_label": "OUR STORY"
+      }
+    }
+  ]
+}
+{% endschema %}
