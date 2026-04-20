@@ -1,0 +1,485 @@
+/* =========================================
+   FUNKE — Premium Car Fragrance Brand CSS
+   WHERE PERFORMANCE MEETS FRAGRANCE
+   ========================================= */
+
+:root {
+  --funke-black: #1C1C1E;
+  --funke-dark: #242424;
+  --funke-mid: #2C2C2C;
+  --funke-gold: #C9A84C;
+  --funke-red: #8B0000;
+  --funke-white: #EDE8DC;
+  --funke-heading: #F2ECD8;
+  --funke-body: #C9C0AE;
+  --funke-border: #2C2C2C;
+  --funke-white-dim: rgba(237, 232, 220, 0.6);
+}
+
+/* ---- TYPOGRAPHY OVERRIDES ---- */
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Bebas Neue', var(--font-heading-family), sans-serif !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #F2ECD8 !important;
+}
+
+p, .rte p, .body-text {
+  color: #C9C0AE;
+}
+
+/* Structural borders */
+hr,
+.section-separator,
+.divider {
+  border-color: #2C2C2C !important;
+}
+
+body,
+p, li, span, a, div,
+input, textarea, select, button,
+.shopify-payment-button__button,
+.field__input,
+.select__select {
+  font-family: 'Inter', var(--font-body-family), sans-serif !important;
+}
+
+/* ---- GLOBAL BACKGROUND ---- */
+
+body,
+.gradient,
+.color-scheme-1,
+.color-background-1 {
+  background-color: #1C1C1E !important;
+}
+
+/* ---- LINK COLORS ---- */
+
+a {
+  color: var(--funke-white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--funke-gold);
+}
+
+/* ---- BUTTONS ---- */
+
+.button,
+.btn {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 0.1em;
+  font-size: 1.6rem !important;
+  border-radius: 0 !important;
+}
+
+/* ---- ANNOUNCEMENT BAR GOLD TEXT ---- */
+
+.announcement-bar__message,
+.announcement-bar__message .h5,
+.announcement-bar__message span {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 1.15rem !important;
+  text-transform: uppercase;
+}
+
+/* ---- HEADER NAV LINKS ---- */
+
+.header__menu-item,
+.header__menu-item span,
+.list-menu__item--link,
+.header__heading-link {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.header__menu-item:hover span,
+.list-menu__item--link:hover {
+  color: var(--funke-gold) !important;
+}
+
+/* Logo sizing */
+.header__heading-logo {
+  filter: brightness(10) !important;
+}
+
+/* ---- PRODUCT CARDS ---- */
+
+.card-wrapper,
+.card {
+  background: #242424 !important;
+  border-radius: 0 !important;
+}
+
+.card__content,
+.card__information {
+  background: #242424 !important;
+}
+
+.card__heading,
+.card__heading a {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2.4rem !important;
+  letter-spacing: 0.05em;
+  color: #F2ECD8 !important;
+}
+
+.price__regular,
+.price-item,
+.price {
+  color: var(--funke-gold) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+}
+
+/* Gold border on product cards */
+.card--card {
+  border: 1px solid rgba(201, 168, 76, 0.2) !important;
+  transition: border-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.card--card:hover {
+  border-color: rgba(201, 168, 76, 0.55) !important;
+  transform: translateY(-3px);
+}
+
+/* ---- PRODUCT PAGE ---- */
+
+.product__title,
+.product .product__title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(3.5rem, 5vw, 6rem) !important;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #F2ECD8 !important;
+}
+
+.product__description,
+.product-description {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #C9C0AE;
+}
+
+/* Product price in gold */
+.price .price-item--regular,
+.price .price-item--sale {
+  color: var(--funke-gold) !important;
+  font-size: 2.8rem !important;
+  font-weight: 500;
+}
+
+/* Add to Cart button - full gold */
+.product-form__submit,
+.shopify-payment-button__button--unbranded {
+  background: var(--funke-gold) !important;
+  color: #1C1C1E !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2rem !important;
+  letter-spacing: 0.12em;
+  border-radius: 0 !important;
+  border: none !important;
+  transition: background 0.2s !important;
+}
+
+.product-form__submit:hover,
+.shopify-payment-button__button--unbranded:hover {
+  background: #b8923f !important;
+}
+
+/* Variant picker */
+.variant-input-wrapper label,
+.product-form__input label {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237, 232, 220, 0.6);
+}
+
+.variant-input input:checked ~ label,
+.swatch-input:checked ~ .swatch {
+  border-color: var(--funke-gold) !important;
+  color: var(--funke-gold) !important;
+}
+
+/* ---- COLLECTION PAGE ---- */
+
+.collection__title,
+.main-collection-banner__title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(4rem, 7vw, 9rem) !important;
+  letter-spacing: 0.04em;
+  color: #F2ECD8 !important;
+}
+
+.main-collection-banner {
+  background: #1C1C1E !important;
+  border-bottom: 1px solid #2C2C2C;
+}
+
+/* Filter/sort bar */
+.facets__form .facets__summary,
+.facets__heading {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237, 232, 220, 0.6) !important;
+}
+
+/* ---- FOOTER ---- */
+
+.footer {
+  border-top: 1px solid #2C2C2C !important;
+}
+
+.footer-block__heading {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2rem !important;
+  letter-spacing: 0.1em;
+  color: #F2ECD8 !important;
+}
+
+.footer__list a,
+.list-menu__item {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.4rem !important;
+  color: #C9C0AE !important;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.footer__list a:hover,
+.list-menu__item:hover {
+  color: var(--funke-gold) !important;
+}
+
+.footer__copyright,
+.footer__copyright-content {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.2rem !important;
+  color: rgba(201, 192, 174, 0.4) !important;
+  letter-spacing: 0.1em;
+}
+
+/* ---- NEWSLETTER SECTION (built-in) ---- */
+
+.newsletter__heading {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(3rem, 5vw, 5.5rem) !important;
+  letter-spacing: 0.05em;
+  color: var(--funke-white) !important;
+}
+
+.newsletter .field__input {
+  background: #1C1C1E !important;
+  border: 1px solid rgba(201, 168, 76, 0.3) !important;
+  border-radius: 0 !important;
+  color: var(--funke-white) !important;
+}
+
+.newsletter .field__input:focus {
+  border-color: var(--funke-gold) !important;
+  outline: none;
+}
+
+.newsletter .button {
+  background: var(--funke-gold) !important;
+  color: #1C1C1E !important;
+  border-radius: 0 !important;
+}
+
+/* ---- CART ---- */
+
+.cart__title,
+.cart-notification__heading {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 0.05em;
+}
+
+.cart-item__name {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 1.8rem !important;
+  letter-spacing: 0.04em;
+}
+
+/* ---- SEARCH / PREDICTIVE ---- */
+
+.predictive-search__results-list,
+.predictive-search {
+  background: #242424 !important;
+  border: 1px solid rgba(201, 168, 76, 0.2) !important;
+}
+
+/* ---- FORM INPUTS GLOBAL ---- */
+
+.field__input,
+.select__select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  background: #242424 !important;
+  border-color: rgba(201, 168, 76, 0.25) !important;
+  color: var(--funke-white) !important;
+  border-radius: 0 !important;
+}
+
+.field__input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--funke-gold) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.field__label,
+label {
+  color: rgba(237, 232, 220, 0.5) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---- UTILITY BAR (ANNOUNCEMENT) ---- */
+
+.utility-bar {
+  background: #1C1C1E !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15) !important;
+}
+
+/* ---- SECTION DIVIDERS ---- */
+
+.section-header {
+  background: #1C1C1E !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+/* ---- PASSWORD PAGE ---- */
+
+.password-header__logo img {
+  filter: brightness(10);
+}
+
+.password-page__title,
+.password-page__title .h2 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 5rem !important;
+  letter-spacing: 0.08em;
+  color: var(--funke-white) !important;
+}
+
+/* ---- BADGES ---- */
+
+.badge--sale {
+  background: var(--funke-gold) !important;
+  color: #1C1C1E !important;
+  border-radius: 0 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+/* ---- SCROLLBAR ---- */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--funke-gold);
+}
+
+/* ---- SELECTION ---- */
+
+::selection {
+  background: rgba(201, 168, 76, 0.25);
+  color: var(--funke-white);
+}
+
+/* ---- HORIZONTAL RULE ---- */
+
+hr {
+  border-color: rgba(201, 168, 76, 0.15) !important;
+}
+
+/* ---- QUANTITY INPUT ---- */
+
+.quantity__button,
+.quantity__input {
+  background: #242424 !important;
+  border-color: rgba(201, 168, 76, 0.25) !important;
+  color: var(--funke-white) !important;
+  border-radius: 0 !important;
+}
+
+/* ---- MOBILE MENU DRAWER ---- */
+
+.menu-drawer,
+.menu-drawer__container {
+  background: #1C1C1E !important;
+}
+
+.menu-drawer__menu .list-menu__item--link {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 2.8rem !important;
+  letter-spacing: 0.06em;
+  color: var(--funke-white) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+/* ---- ICONS ---- */
+
+.icon {
+  fill: currentColor;
+}
+
+/* ---- BREADCRUMBS ---- */
+
+.breadcrumbs {
+  display: none;
+}
+
+/* ---- RICH TEXT / PAGE CONTENT ---- */
+
+.rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  color: var(--funke-white) !important;
+}
+
+.rte p, .rte li {
+  font-family: 'Inter', sans-serif !important;
+  color: rgba(237, 232, 220, 0.65);
+  line-height: 1.9;
+  font-size: 1.6rem;
+}
+
+/* ---- SKIP LINK ---- */
+
+.skip-to-content-link {
+  background: var(--funke-gold);
+  color: #1C1C1E;
+}
