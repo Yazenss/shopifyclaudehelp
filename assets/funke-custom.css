@@ -51,19 +51,13 @@ input, textarea, select, button,
 .funke-story-teaser .funke-story-teaser__heading,
 .funke-scents h2,
 .funke-scents .funke-scents__title,
-.funke-scard .funke-scard__name,
-.funke-nl h2,
-.funke-nl .funke-nl__title,
-.funke-wl h1,
-.funke-wl .funke-wl__title,
-.funke-contact-page__form-title {
+.funke-scard .funke-scard__name {
   color: #F5F0E8 !important;
 }
 
 /* ---- GLOBAL BACKGROUND ---- */
 
 body,
-.gradient,
 .color-scheme-1,
 .color-background-1 {
   background-color: #F5F0E8 !important;
@@ -100,21 +94,44 @@ a:hover {
 
 /* ---- ANNOUNCEMENT BAR ---- */
 
-.announcement-bar,
+.announcement-bar {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  background-color: #1C1C1E !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 .announcement-bar__link {
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+#shopify-section-announcement-bar,
+.section-announcement-bar {
+  background: #1C1C1E !important;
 }
 
 .announcement-bar__message,
 .announcement-bar__message .h5,
-.announcement-bar__message span {
+.announcement-bar__message span,
+.announcement-bar__link {
   font-family: 'Inter', sans-serif !important;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  font-size: 1.15rem !important;
-  text-transform: uppercase;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;
+  font-size: 1.3rem !important;
+  text-transform: uppercase !important;
   color: #C9A84C !important;
+}
+
+/* Arrow icon inherits gold via currentColor */
+.announcement-bar__link .icon,
+.announcement-bar__link svg,
+.announcement-bar__link .icon-arrow {
+  fill: #C9A84C !important;
+  color: #C9A84C !important;
+  width: 1.4rem !important;
+  height: 1.4rem !important;
 }
 
 /* ---- HEADER NAV LINKS ---- */
@@ -384,7 +401,7 @@ textarea:focus {
 
 .field__label,
 label {
-  color: rgba(28, 28, 30, 0.55) !important;
+  color: rgba(28, 28, 30, 0.75) !important;
   font-family: 'Inter', sans-serif !important;
   font-size: 1.2rem !important;
   letter-spacing: 0.1em;
@@ -398,11 +415,13 @@ label {
   border-bottom: 1px solid rgba(201, 168, 76, 0.25) !important;
 }
 
-/* ---- SECTION HEADER ---- */
+/* ---- SECTION HEADER / HEADER GROUP ---- */
 
-.section-header {
-  background: #F5F0E8 !important;
-  border-bottom: 1px solid #C9A84C;
+.section-header,
+.shopify-section-group-header-group,
+.header-wrapper {
+  background: #1C1C1E !important;
+  border-bottom: none !important;
 }
 
 /* ---- PASSWORD PAGE ---- */
