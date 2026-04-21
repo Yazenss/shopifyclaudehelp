@@ -1,7 +1,7 @@
 <style>
   .funke-hiw {
     padding: 8rem 4rem;
-    background: #242424;
+    background: #EDE8DC;
     position: relative;
   }
 
@@ -10,7 +10,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.25), transparent);
+    background: #C9A84C;
   }
 
   .funke-hiw__inner {
@@ -37,9 +37,9 @@
   .funke-hiw__title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(3.5rem, 5vw, 5.5rem);
-    letter-spacing: 0.05em;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #EDE8DC;
+    color: #1C1C1E;
     margin: 0;
     line-height: 1;
   }
@@ -59,7 +59,7 @@
     left: calc(33.33% / 2);
     right: calc(33.33% / 2);
     height: 1px;
-    background: rgba(201, 168, 76, 0.2);
+    background: rgba(201, 168, 76, 0.4);
     z-index: 0;
   }
 
@@ -77,14 +77,15 @@
     margin: 0 auto 2.5rem;
     width: 7rem;
     height: 7rem;
-    background: #1C1C1E;
-    border: 1px solid rgba(201, 168, 76, 0.35);
+    background: #F5F0E8;
+    border: 1px solid rgba(201, 168, 76, 0.5);
     position: relative;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   .funke-hiw__step:hover .funke-hiw__step-num-wrap {
     border-color: #C9A84C;
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
   }
 
   .funke-hiw__step-num {
@@ -98,19 +99,19 @@
   .funke-hiw__step-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #EDE8DC;
+    color: #1C1C1E;
     margin: 0 0 1.2rem;
     line-height: 1;
   }
 
   .funke-hiw__step-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 1.45rem;
-    font-weight: 300;
+    font-size: 1.4rem;
+    font-weight: 400;
     line-height: 1.7;
-    color: rgba(237, 232, 220, 0.5);
+    color: rgba(58, 58, 58, 0.75);
     margin: 0;
   }
 

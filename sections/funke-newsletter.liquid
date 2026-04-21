@@ -1,7 +1,7 @@
 <style>
   .funke-nl {
     padding: 11rem 0;
-    background: #1C1C1E;
+    background: #F5F0E8;
     position: relative;
     overflow: hidden;
   }
@@ -11,7 +11,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+    background: #C9A84C;
   }
 
   /* Giant watermark */
@@ -22,7 +22,7 @@
     transform: translateX(-50%);
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28rem;
-    color: rgba(201, 168, 76, 0.03);
+    color: rgba(28, 28, 30, 0.04);
     white-space: nowrap;
     line-height: 1;
     pointer-events: none;
@@ -53,19 +53,19 @@
   .funke-nl__title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(4rem, 6.5vw, 7.5rem);
-    letter-spacing: 0.04em;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #EDE8DC;
+    color: #1C1C1E;
     margin: 0 0 1.5rem;
     line-height: 1;
   }
 
   .funke-nl__subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(237, 232, 220, 0.5);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(28, 28, 30, 0.6);
     margin: 0 0 5rem;
   }
 
@@ -77,10 +77,10 @@
 
   .funke-nl__input {
     flex: 1;
-    background: #242424;
-    border: 1px solid rgba(201, 168, 76, 0.25);
+    background: #EDE8DC;
+    border: 1px solid #1C1C1E;
     border-right: none;
-    color: #EDE8DC;
+    color: #1C1C1E;
     font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     padding: 1.8rem 2.2rem;
@@ -92,17 +92,17 @@
   }
 
   .funke-nl__input::placeholder {
-    color: rgba(237, 232, 220, 0.25);
+    color: rgba(28, 28, 30, 0.35);
     letter-spacing: 0.04em;
   }
 
   .funke-nl__input:focus {
-    border-color: rgba(201, 168, 76, 0.55);
+    border-color: #C9A84C;
   }
 
   .funke-nl__btn {
-    background: #C9A84C;
-    color: #1C1C1E;
+    background: #1C1C1E;
+    color: #F5F0E8;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
     letter-spacing: 0.12em;
@@ -117,17 +117,16 @@
   }
 
   .funke-nl__btn:hover {
-    background: #b8923f;
+    background: #3A3A3A;
   }
 
   .funke-nl__note {
     font-family: 'Inter', sans-serif;
     font-size: 1.15rem;
-    color: rgba(237, 232, 220, 0.22);
+    color: rgba(28, 28, 30, 0.4);
     letter-spacing: 0.06em;
   }
 
-  /* Success / error messages */
   .funke-nl__success {
     display: none;
     font-family: 'Inter', sans-serif;
@@ -149,14 +148,14 @@
       gap: 1.2rem;
     }
     .funke-nl__input {
-      border-right: 1px solid rgba(201, 168, 76, 0.25);
+      border-right: 1px solid #1C1C1E;
     }
     .funke-nl__btn {
       width: 100%;
       padding: 1.8rem;
     }
     .funke-nl__subtitle {
-      font-size: 1.55rem;
+      font-size: 1.4rem;
     }
   }
 </style>
