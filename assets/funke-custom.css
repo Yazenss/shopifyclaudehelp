@@ -181,17 +181,32 @@ a:hover {
 /* Logo */
 .header__heading-logo {
   filter: brightness(10) !important;
-  max-width: 160px !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-
-.header__heading-logo img,
-.header__heading img,
-header .header__heading img {
-  width: 160px !important;
+  width: 280px !important;
+  max-width: 280px !important;
+  min-width: 280px !important;
   height: auto !important;
   max-height: none !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.header__heading {
+  min-width: 280px !important;
+  flex-shrink: 0 !important;
+}
+
+.header__heading a {
+  display: block !important;
+  width: 280px !important;
+}
+
+.header__heading img,
+.header__heading-logo img,
+header .header__heading img {
+  width: 280px !important;
+  height: auto !important;
+  max-height: none !important;
+  display: block !important;
   object-fit: contain;
 }
 
