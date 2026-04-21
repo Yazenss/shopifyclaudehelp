@@ -138,6 +138,14 @@ a:hover {
 
 .header {
   background-color: #1C1C1E !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-height: 0 !important;
+}
+
+.header__inner {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 .header__menu-item,
@@ -145,10 +153,10 @@ a:hover {
 .list-menu__item--link,
 .header__heading-link {
   font-family: 'Inter', sans-serif !important;
-  font-size: 1rem !important;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
   transition: color 0.2s ease;
   color: #F5F0E8 !important;
 }
@@ -161,6 +169,16 @@ a:hover {
 /* Logo */
 .header__heading-logo {
   filter: brightness(10) !important;
+  max-height: 40px !important;
+  height: 40px !important;
+  width: auto !important;
+}
+
+.header__heading-logo img {
+  max-height: 40px !important;
+  height: 40px !important;
+  width: auto !important;
+  object-fit: contain;
 }
 
 /* ---- PRODUCT CARDS ---- */
