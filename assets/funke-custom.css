@@ -150,13 +150,13 @@ a:hover {
 
 .header {
   background-color: #1C1C1E !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
 }
 
 .header__inner {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
   align-items: center !important;
 }
 
@@ -176,6 +176,29 @@ a:hover {
 .header__menu-item:hover span,
 .list-menu__item--link:hover {
   color: var(--funke-gold) !important;
+}
+
+/* ---- HEADER ICONS ---- */
+.header__icon,
+.header__icon--cart,
+.header__icon--account {
+  color: #F5F0E8 !important;
+}
+.header__icon svg,
+.header__icon .icon,
+.header__icon--cart svg,
+.header__icon--account svg {
+  fill: #F5F0E8 !important;
+  color: #F5F0E8 !important;
+}
+.header__icon:hover,
+.header__icon--cart:hover,
+.header__icon--account:hover {
+  color: var(--funke-gold) !important;
+}
+.header__icon:hover svg,
+.header__icon:hover .icon {
+  fill: var(--funke-gold) !important;
 }
 
 
