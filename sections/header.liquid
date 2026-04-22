@@ -152,12 +152,12 @@
                 {{ settings.logo | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo motion-reduce',
                   widths: widths,
-                  height: logo_height,
+                  height: nil,
                   width: settings.logo_width,
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true,
-                  style: 'width: 260px; height: auto; max-height: none; max-width: none; display: block;'
+                  style: 'width: 280px; height: auto; max-height: none;'
                 }}
               </div>
             {%- else -%}
@@ -193,12 +193,12 @@
                 {{ settings.logo | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo',
                   widths: widths,
-                  height: logo_height,
+                  height: nil,
                   width: settings.logo_width,
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true,
-                  style: 'width: 260px; height: auto; max-height: none; max-width: none; display: block;'
+                  style: 'width: 280px; height: auto; max-height: none;'
                 }}
               </div>
             {%- else -%}
