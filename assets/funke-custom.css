@@ -184,41 +184,6 @@ a:hover {
   color: var(--funke-gold) !important;
 }
 
-/* Logo */
-.header__heading-logo {
-  filter: brightness(10) !important;
-  width: 280px !important;
-  max-width: 280px !important;
-  min-width: 280px !important;
-  height: 45px !important;
-  max-height: 45px !important;
-  object-fit: contain !important;
-  flex-shrink: 0 !important;
-  display: block !important;
-}
-
-.header__heading {
-  min-width: 280px !important;
-  flex-shrink: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.header__heading a {
-  display: block !important;
-  width: 280px !important;
-  line-height: 0 !important;
-}
-
-.header__heading img,
-.header__heading-logo img,
-header .header__heading img {
-  width: 280px !important;
-  height: 45px !important;
-  max-height: 45px !important;
-  object-fit: contain !important;
-  display: block !important;
-}
 
 /* ---- PRODUCT CARDS ---- */
 
@@ -594,4 +559,35 @@ hr {
 .skip-to-content-link {
   background: #1C1C1E;
   color: #F5F0E8;
+}
+
+/* ---- LOGO ---- */
+
+.header__heading {
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
+  flex-shrink: 0 !important;
+}
+
+.header__heading a {
+  display: block !important;
+  width: 300px !important;
+}
+
+.header__heading-logo {
+  filter: brightness(10) !important;
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
+  height: 50px !important;
+  max-height: 50px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  display: block !important;
+}
+
+img.header__heading-logo {
+  width: 300px !important;
+  height: 50px !important;
 }
