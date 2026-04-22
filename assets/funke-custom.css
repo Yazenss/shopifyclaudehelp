@@ -329,7 +329,7 @@ a:hover {
 .list-menu__item {
   font-family: 'Inter', sans-serif !important;
   font-size: 1.4rem !important;
-  color: rgba(245, 240, 232, 0.7) !important;
+  color: #EDE8DC !important;
   letter-spacing: 0.05em;
   transition: color 0.2s;
 }
@@ -343,7 +343,24 @@ a:hover {
 .footer__copyright-content {
   font-family: 'Inter', sans-serif !important;
   font-size: 1.2rem !important;
-  color: rgba(245, 240, 232, 0.35) !important;
+  color: rgba(237, 232, 220, 0.65) !important;
+  letter-spacing: 0.1em;
+}
+
+.footer a,
+.footer p,
+.footer span,
+.footer li,
+.footer__content,
+.footer__column {
+  color: #EDE8DC !important;
+}
+
+.footer-block__brand-info p,
+.footer-block__details-content p,
+.footer-block .rte p {
+  color: #C9A84C !important;
+  font-weight: 500 !important;
   letter-spacing: 0.1em;
 }
 
@@ -590,4 +607,117 @@ hr {
 img.header__heading-logo {
   width: 300px !important;
   height: 50px !important;
+}
+
+/* ---- MOBILE ---- */
+
+@media (max-width: 768px) {
+  /* Hamburger / mobile nav toggle */
+  .header__icon--menu,
+  .header-drawer__toggle,
+  details.menu-drawer-container > summary {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Logo scales down on mobile */
+  .header__heading,
+  .header__heading a {
+    width: 160px !important;
+    min-width: 0 !important;
+    max-width: 160px !important;
+  }
+
+  .header__heading-logo,
+  img.header__heading-logo,
+  .header__heading img,
+  .header__heading-logo img {
+    width: 160px !important;
+    min-width: 0 !important;
+    max-width: 160px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Hero title */
+  .funke-hero__title {
+    font-size: 48px !important;
+    line-height: 1 !important;
+  }
+
+  /* Hero actions — full width buttons */
+  .funke-hero__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.6rem !important;
+    width: 100% !important;
+  }
+
+  .funke-hero__cta-primary {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1.6rem 2rem !important;
+  }
+
+  /* Product cards stack vertically */
+  .funke-showcase__grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.6rem !important;
+  }
+
+  /* Global section padding */
+  .funke-showcase__inner,
+  .funke-scents__inner,
+  .funke-story-teaser__inner,
+  .funke-nl__inner,
+  .funke-hiw__inner,
+  .funke-story-page__hero,
+  .funke-story-page__content,
+  .funke-contact-page,
+  .funke-wl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Scent profile cards stack */
+  .funke-scents__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Full width submit buttons */
+  .funke-nl__btn,
+  .funke-wl__btn,
+  .funke-contact-form__submit,
+  .funke-story-page__cta,
+  .funke-pcard__btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Newsletter & waitlist forms stack */
+  .funke-nl__form,
+  .funke-wl__form {
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+  }
+
+  .funke-nl__input,
+  .funke-wl__input {
+    border-right: 1px solid #1C1C1E !important;
+    width: 100% !important;
+  }
+
+  /* Contact form full width */
+  .funke-contact-page__inner {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Our story scent grid stacks */
+  .funke-story-page__scents {
+    grid-template-columns: 1fr !important;
+  }
 }
