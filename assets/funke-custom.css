@@ -759,6 +759,9 @@ img.header__heading-logo {
   margin-top: 1rem;
   margin-bottom: 0;
   font-size: 1.2rem;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 /* ---- CART PRE-ORDER NOTICE ---- */
