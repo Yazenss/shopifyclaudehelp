@@ -299,9 +299,11 @@ a:hover {
 }
 
 .variant-input input:checked ~ label,
-.swatch-input:checked ~ .swatch {
-  border-color: var(--funke-gold) !important;
-  color: var(--funke-gold) !important;
+.swatch-input:checked ~ .swatch,
+.product-form__input--pill input[type='radio']:checked + label {
+  background-color: #1C1C1E !important;
+  color: #F5F0E8 !important;
+  border-color: #1C1C1E !important;
 }
 
 /* ---- COLLECTION PAGE ---- */
