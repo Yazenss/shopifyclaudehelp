@@ -300,9 +300,14 @@
                   height="675"
                 >
               {%- else -%}
-                <div class="funke-pcard__placeholder">
-                  {{ 'product-' | append: forloop.index | placeholder_svg_tag }}
-                </div>
+                <img
+                  src="{{ 'funke-placeholder.svg' | asset_url }}"
+                  alt="{{ product.title }} — Coming Soon"
+                  class="funke-pcard__image"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                >
               {%- endif -%}
               {%- if product.compare_at_price > product.price -%}
                 <span class="funke-pcard__badge">Sale</span>
@@ -327,9 +332,14 @@
           {%- assign pprices = '$39.99,$14.99,$9.99' | split: ',' -%}
           <article class="funke-pcard">
             <div class="funke-pcard__image-wrap">
-              <div class="funke-pcard__placeholder">
-                {{ 'product-' | append: i | placeholder_svg_tag }}
-              </div>
+              <img
+                src="{{ 'funke-placeholder.svg' | asset_url }}"
+                alt="{{ ptitles[forloop.index0] }} — Coming Soon"
+                class="funke-pcard__image"
+                width="400"
+                height="300"
+                loading="lazy"
+              >
             </div>
             <div class="funke-pcard__body">
               <span class="funke-pcard__category">Car Fragrance</span>

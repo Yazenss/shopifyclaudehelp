@@ -672,7 +672,8 @@ img.header__heading-logo {
     width: 100% !important;
   }
 
-  .funke-hero__cta-primary {
+  .funke-hero__cta-primary,
+  .funke-hero__cta-waitlist {
     width: 100% !important;
     text-align: center !important;
     padding: 1.6rem 2rem !important;

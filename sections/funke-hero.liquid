@@ -117,6 +117,26 @@
     color: #F5F0E8;
   }
 
+  .funke-hero__cta-waitlist {
+    display: inline-block;
+    background: transparent;
+    color: #F5F0E8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.16em;
+    padding: 1.6rem 4.5rem;
+    text-decoration: none;
+    border: 1.5px solid #F5F0E8;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .funke-hero__cta-waitlist:hover {
+    background: rgba(245, 240, 232, 0.08);
+    border-color: #C9A84C;
+    color: #C9A84C;
+    transform: translateY(-2px);
+  }
+
   .funke-hero__cta-secondary {
     display: inline-flex;
     align-items: center;
@@ -271,6 +291,7 @@
       <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="funke-hero__cta-primary">
         {{ section.settings.button_label | default: 'SHOP NOW' }}
       </a>
+      <a href="/pages/wait-list" class="funke-hero__cta-waitlist">JOIN THE WAITLIST</a>
       {%- if section.settings.secondary_link != blank -%}
         <a href="{{ section.settings.secondary_link }}" class="funke-hero__cta-secondary">
           {{ section.settings.secondary_label | default: 'Our Story' }}
