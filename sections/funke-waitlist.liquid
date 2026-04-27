@@ -180,12 +180,35 @@
   }
 
   .funke-wl__success {
-    display: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.6rem;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .funke-wl__success-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
     color: #C9A84C;
-    letter-spacing: 0.05em;
-    padding: 2rem;
+    margin: 0 0 1.6rem;
+    line-height: 1;
+  }
+
+  .funke-wl__success-divider {
+    display: block;
+    width: 5rem;
+    height: 1px;
+    background: rgba(201, 168, 76, 0.5);
+    margin: 0 auto 1.8rem;
+  }
+
+  .funke-wl__success-msg {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(28, 28, 30, 0.6);
+    margin: 0;
   }
 
   @media screen and (max-width: 749px) {
@@ -226,27 +249,34 @@
     <span class="funke-wl__divider"></span>
     <p class="funke-wl__body">Join the waitlist for exclusive early access and <strong>15% off your first order</strong>.</p>
 
-    {%- form 'customer', class: 'funke-wl__form', id: 'FunkeWaitlistForm' -%}
+    {%- form 'customer', id: 'FunkeWaitlistForm' -%}
       <input type="hidden" name="contact[tags]" value="waitlist">
       {%- if form.posted_successfully? -%}
-        <p class="funke-wl__success" style="display:block;">You're on the list. We'll be in touch.</p>
+        <div class="funke-wl__success">
+          <p class="funke-wl__success-title">YOU'RE ON THE LIST.</p>
+          <span class="funke-wl__success-divider"></span>
+          <p class="funke-wl__success-msg">We'll be in touch before launch.<br>Check your inbox for a confirmation email.</p>
+        </div>
+      {%- else -%}
+        <div class="funke-wl__form">
+          <input
+            type="email"
+            name="contact[email]"
+            class="funke-wl__input"
+            id="WaitlistEmail"
+            placeholder="Enter your email"
+            value="{{ form.email }}"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            aria-label="Email address"
+            required
+          >
+          <button type="submit" class="funke-wl__btn" name="commit">JOIN THE WAITLIST</button>
+        </div>
+        <p class="funke-wl__note">No spam. Exclusive access only.</p>
       {%- endif -%}
-      <input
-        type="email"
-        name="contact[email]"
-        class="funke-wl__input"
-        id="WaitlistEmail"
-        placeholder="Enter your email"
-        value="{{ form.email }}"
-        autocorrect="off"
-        autocapitalize="off"
-        autocomplete="email"
-        aria-label="Email address"
-        required
-      >
-      <button type="submit" class="funke-wl__btn" name="commit">JOIN THE WAITLIST</button>
     {%- endform -%}
-    <p class="funke-wl__note">No spam. Exclusive access only.</p>
 
   </div>
 </section>
