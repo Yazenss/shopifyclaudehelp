@@ -742,3 +742,33 @@ img.header__heading-logo {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ---- PRE-ORDER BADGE ---- */
+.funke-preorder-badge {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 1.2rem;
+}
+
+.funke-preorder-badge--product {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+/* ---- CART PRE-ORDER NOTICE ---- */
+.funke-cart-preorder-notice {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #C9A84C;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 1.6rem;
+  text-align: center;
+}

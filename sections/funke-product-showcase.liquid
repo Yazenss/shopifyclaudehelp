@@ -311,6 +311,7 @@
               <span class="funke-pcard__category">{{ product.type | default: 'Car Fragrance' }}</span>
               <a href="{{ product.url }}" class="funke-pcard__name">{{ product.title }}</a>
               <p class="funke-pcard__desc">{{ product.description | strip_html | truncate: 85 }}</p>
+              <span class="funke-preorder-badge">PRE-ORDER — Ships in 2-3 weeks</span>
               <div class="funke-pcard__footer">
                 <span class="funke-pcard__price">{{ product.price | money }}</span>
                 <a href="{{ product.url }}" class="funke-pcard__btn">VIEW PRODUCT</a>
@@ -339,6 +340,7 @@
               <span class="funke-pcard__category">Car Fragrance</span>
               <span class="funke-pcard__name">{{ ptitles[forloop.index0] }}</span>
               <p class="funke-pcard__desc">{{ pdescs[forloop.index0] }}</p>
+              <span class="funke-preorder-badge">PRE-ORDER — Ships in 2-3 weeks</span>
               <div class="funke-pcard__footer">
                 <span class="funke-pcard__price">{{ pprices[forloop.index0] }}</span>
                 <a href="/collections/all" class="funke-pcard__btn">VIEW PRODUCT</a>
