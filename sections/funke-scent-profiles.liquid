@@ -185,6 +185,31 @@
     width: 100%;
   }
 
+  /* ---- Scent Icon Row ---- */
+  .funke-scard__icons {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.8rem;
+    align-items: flex-start;
+  }
+
+  .funke-scard__icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .funke-scard__icon-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    white-space: nowrap;
+  }
+
   @media screen and (max-width: 749px) {
     .funke-scents {
       padding: 6rem 0;
@@ -201,6 +226,13 @@
     }
     .funke-scard__name {
       font-size: 5rem;
+    }
+    .funke-scard__icons {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .funke-scard__icon-label {
+      font-size: 0.75rem;
     }
   }
 </style>
@@ -222,6 +254,37 @@
         <span class="funke-scard__accent"></span>
         <div class="funke-scard__tagline">Coastal. Warm. Golden.</div>
         <p class="funke-scard__desc">Coastal corniche at golden hour. Coconut, bergamot, and warm cedarwood. For the drive that feels like a vacation.</p>
+        <div class="funke-scard__icons">
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 31 C14 25 15 19 19 13"/>
+              <path d="M19 13 C17 8 10 7 7 3"/>
+              <path d="M19 13 C22 7 28 7 30 3"/>
+              <path d="M19 13 C23 12 26 14 29 11"/>
+              <path d="M19 13 C16 12 12 14 9 12"/>
+            </svg>
+            <span class="funke-scard__icon-label">COCONUT</span>
+          </div>
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="16" cy="16" r="13" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="5" stroke-width="1"/>
+              <line x1="16" y1="3" x2="16" y2="29" stroke-width="1"/>
+              <line x1="5" y1="10" x2="27" y2="22" stroke-width="1"/>
+              <line x1="5" y1="22" x2="27" y2="10" stroke-width="1"/>
+            </svg>
+            <span class="funke-scard__icon-label">BERGAMOT</span>
+          </div>
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="16" y1="23" x2="16" y2="30"/>
+              <path d="M7 23 L16 11 L25 23"/>
+              <path d="M10 17 L16 7 L22 17"/>
+              <path d="M13 12 L16 6 L19 12"/>
+            </svg>
+            <span class="funke-scard__icon-label">CEDARWOOD</span>
+          </div>
+        </div>
         <div class="funke-scard__notes">
           <span class="funke-scard__note">Coconut</span>
           <span class="funke-scard__note">Bergamot</span>
@@ -240,6 +303,41 @@
         <span class="funke-scard__accent"></span>
         <div class="funke-scard__tagline">Dark. Warm. Intoxicating.</div>
         <p class="funke-scard__desc">It's past midnight. You're in Monaco. The Grand Prix circuit is empty but you can still feel the energy in the streets. Orange blossom trees line the road. The harbor lights reflect off wet pavement. You're not going anywhere fast — you don't need to. The drive IS the destination.</p>
+        <div class="funke-scard__icons">
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="16" cy="16" r="3" stroke-width="1.5"/>
+              <ellipse cx="16" cy="9" rx="2.5" ry="4.5" stroke-width="1.5"/>
+              <ellipse cx="16" cy="9" rx="2.5" ry="4.5" stroke-width="1.5" transform="rotate(72 16 16)"/>
+              <ellipse cx="16" cy="9" rx="2.5" ry="4.5" stroke-width="1.5" transform="rotate(144 16 16)"/>
+              <ellipse cx="16" cy="9" rx="2.5" ry="4.5" stroke-width="1.5" transform="rotate(216 16 16)"/>
+              <ellipse cx="16" cy="9" rx="2.5" ry="4.5" stroke-width="1.5" transform="rotate(288 16 16)"/>
+            </svg>
+            <span class="funke-scard__icon-label">ORANGE BLOSSOM</span>
+          </div>
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="16" cy="16" r="2.5" stroke-width="1.5"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(45 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(90 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(135 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(180 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(225 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(270 16 16)"/>
+              <ellipse cx="16" cy="9.5" rx="2" ry="4.5" stroke-width="1.25" transform="rotate(315 16 16)"/>
+            </svg>
+            <span class="funke-scard__icon-label">DAHLIA</span>
+          </div>
+          <div class="funke-scard__icon-item">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M10 30 C10 24 7 20 10 16 C13 12 10 8 13 4"/>
+              <path d="M16 30 C16 23 13 19 16 14 C19 9 16 6 18 2"/>
+              <path d="M22 30 C22 24 19 20 22 16 C25 12 22 8 25 5"/>
+            </svg>
+            <span class="funke-scard__icon-label">MUSK</span>
+          </div>
+        </div>
         <div class="funke-scard__notes">
           <span class="funke-scard__note">Orange Blossom</span>
           <span class="funke-scard__note">Dahlia</span>
