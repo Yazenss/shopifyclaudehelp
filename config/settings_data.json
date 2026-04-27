@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Funke-2_add5d028-a89d-4acc-8fbc-9b098119a8dd.png",
+    "logo": "shopify://shop_images/funke-logo-white-hires.png",
     "logo_width": 300,
     "favicon": "shopify://shop_images/funke_logo_final_5.png",
     "type_header_font": "sans_serif_n4",
@@ -146,57 +146,57 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#F5F0E8",
+          "background": "#f5f0e8",
           "background_gradient": "",
-          "text": "#1C1C1E",
-          "button": "#1C1C1E",
-          "button_label": "#F5F0E8",
-          "secondary_button_label": "#C9A84C",
-          "shadow": "#1C1C1E"
+          "text": "#1c1c1e",
+          "button": "#1c1c1e",
+          "button_label": "#f5f0e8",
+          "secondary_button_label": "#c9a84c",
+          "shadow": "#1c1c1e"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#EDE8DC",
+          "background": "#ede8dc",
           "background_gradient": "",
-          "text": "#1C1C1E",
-          "button": "#1C1C1E",
-          "button_label": "#F5F0E8",
-          "secondary_button_label": "#C9A84C",
-          "shadow": "#1C1C1E"
+          "text": "#1c1c1e",
+          "button": "#1c1c1e",
+          "button_label": "#f5f0e8",
+          "secondary_button_label": "#c9a84c",
+          "shadow": "#1c1c1e"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#1C1C1E",
+          "background": "#1c1c1e",
           "background_gradient": "",
-          "text": "#F5F0E8",
-          "button": "#C9A84C",
-          "button_label": "#1C1C1E",
-          "secondary_button_label": "#C9A84C",
-          "shadow": "#0D0D0D"
+          "text": "#f5f0e8",
+          "button": "#c9a84c",
+          "button_label": "#1c1c1e",
+          "secondary_button_label": "#c9a84c",
+          "shadow": "#0d0d0d"
         }
       },
       "scheme-4": {
         "settings": {
-          "background": "#1C1C1E",
+          "background": "#1c1c1e",
           "background_gradient": "",
-          "text": "#C9A84C",
-          "button": "#C9A84C",
-          "button_label": "#1C1C1E",
-          "secondary_button_label": "#C9A84C",
-          "shadow": "#0D0D0D"
+          "text": "#c9a84c",
+          "button": "#c9a84c",
+          "button_label": "#1c1c1e",
+          "secondary_button_label": "#c9a84c",
+          "shadow": "#0d0d0d"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#8B0000",
+          "background": "#8b0000",
           "background_gradient": "",
-          "text": "#F5F0E8",
-          "button": "#F5F0E8",
-          "button_label": "#8B0000",
-          "secondary_button_label": "#F5F0E8",
-          "shadow": "#0D0D0D"
+          "text": "#f5f0e8",
+          "button": "#f5f0e8",
+          "button_label": "#8b0000",
+          "secondary_button_label": "#f5f0e8",
+          "shadow": "#0d0d0d"
         }
       }
     }
