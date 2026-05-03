@@ -324,7 +324,6 @@
         {%- for i in (1..2) -%}
           {%- assign ptitles = 'FUNKE Starter Kit,FUNKE Disc Refill' | split: ',' -%}
           {%- assign pdescs = 'Complete system. Zinc alloy vent clip + fragrance oil + 3 discs. Choose your scent.,Premium cotton disc inserts for your FUNKE vent clip diffuser. Choose RIVIERA or MONACO.' | split: ',' -%}
-          {%- assign pprices = '$39.99,$9.99' | split: ',' -%}
           <article class="funke-pcard">
             <div class="funke-pcard__image-wrap">
               <img
@@ -342,7 +341,6 @@
               <p class="funke-pcard__desc">{{ pdescs[forloop.index0] }}</p>
               <span class="funke-preorder-badge">PRE-ORDER — Ships in 2-3 weeks</span>
               <div class="funke-pcard__footer">
-                <span class="funke-pcard__price">{{ pprices[forloop.index0] }}</span>
                 <a href="/collections/all" class="funke-pcard__btn">VIEW PRODUCT</a>
               </div>
             </div>
