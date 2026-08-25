@@ -12,12 +12,53 @@
     "hero": {
       "type": "funke-hero",
       "settings": {
+        "image": "shopify://shop_images/YAZENHURACAN-1.jpg",
         "eyebrow": "Engineered for the drive",
         "title": "IGNITE YOUR DRIVE",
         "subtitle": "Premium car fragrances engineered for European car enthusiasts.",
         "button_label": "SHOP NOW",
         "secondary_label": "Our Story"
       }
+    },
+    "yazen-banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/YAZENHURACAN-3.jpg",
+        "image_height": "large"
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHERE PERFORMANCE MEETS FRAGRANCE",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ]
+    },
+    "prod9-image-text": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/PROD-9.jpg",
+        "layout": "image_first"
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {}
+        },
+        "text": {
+          "type": "text",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ]
     },
     "product-showcase": {
       "type": "funke-product-showcase",
@@ -48,6 +89,8 @@
   },
   "order": [
     "hero",
+    "yazen-banner",
+    "prod9-image-text",
     "product-showcase",
     "brand-story",
     "scent-profiles",
