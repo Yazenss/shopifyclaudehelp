@@ -1,0 +1,248 @@
+<style>
+  .funke-story-page {
+    background: #F5F0E8;
+  }
+
+  /* ---- Hero ---- */
+  .funke-story-page__hero {
+    padding: 12rem 4rem 8rem;
+    max-width: 130rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .funke-story-page__hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 4rem; right: 4rem;
+    height: 1px;
+    background: linear-gradient(90deg, #C9A84C, transparent);
+  }
+
+  .funke-story-page__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  .funke-story-page__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(6rem, 11vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1C1C1E;
+    margin: 0;
+    max-width: 90rem;
+  }
+
+  /* ---- Content ---- */
+  .funke-story-page__content {
+    max-width: 84rem;
+    margin: 0 auto;
+    padding: 7rem 4rem 10rem;
+  }
+
+  .funke-story-page__intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(28, 28, 30, 0.82);
+    margin-bottom: 5.5rem;
+    padding-left: 3rem;
+    border-left: 2px solid #C9A84C;
+  }
+
+  .funke-story-page__body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #3A3A3A;
+  }
+
+  .funke-story-page__body p {
+    margin-bottom: 2.8rem;
+  }
+
+  .funke-story-page__body em {
+    color: #C9A84C;
+    font-style: italic;
+  }
+
+  /* Scent grid */
+  .funke-story-page__scents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 5rem 0;
+  }
+
+  .funke-story-page__scent {
+    background: #EDE8DC;
+    padding: 3.5rem;
+    border-left: 3px solid #C9A84C;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #C9A84C;
+  }
+
+  .funke-story-page__scent::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -1rem;
+    right: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    color: rgba(201, 168, 76, 0.08);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .funke-story-page__scent-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    color: #1C1C1E;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .funke-story-page__scent-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(58, 58, 58, 0.75);
+    margin: 0;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Tagline */
+  .funke-story-page__tagline {
+    text-align: center;
+    margin: 6rem 0 5rem;
+  }
+
+  .funke-story-page__tagline-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    letter-spacing: 3px;
+    color: #C9A84C;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  /* CTA */
+  .funke-story-page__cta-wrap {
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  .funke-story-page__cta {
+    display: inline-block;
+    background: #1C1C1E;
+    color: #F5F0E8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    padding: 1.8rem 5.5rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .funke-story-page__cta:hover {
+    background: #3A3A3A;
+    color: #F5F0E8;
+  }
+
+  @media screen and (max-width: 749px) {
+    .funke-story-page__hero,
+    .funke-story-page__content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .funke-story-page__hero {
+      padding-top: 7rem;
+      padding-bottom: 5rem;
+    }
+    .funke-story-page__intro {
+      font-size: 1.85rem;
+      padding-left: 2rem;
+    }
+    .funke-story-page__scents {
+      grid-template-columns: 1fr;
+    }
+    .funke-story-page__body {
+      font-size: 1.4rem;
+    }
+  }
+</style>
+
+<div class="funke-story-page">
+
+  <div class="funke-story-page__hero">
+    <span class="funke-story-page__label">The FUNKE Story</span>
+    <h1 class="funke-story-page__title">Born From<br>An Obsession.</h1>
+  </div>
+
+  <div class="funke-story-page__content">
+
+    <p class="funke-story-page__intro">FUNKE was born from a simple obsession — the way a great car should feel and smell.</p>
+
+    <div class="funke-story-page__body">
+      <p>We are a premium car fragrance brand built for European car enthusiasts. For the BMW owners who detail their cars every weekend. For the Mercedes drivers who care about every detail of their cabin experience. For the Porsche and Audi owners who understand that driving is not just transportation — it is a statement.</p>
+
+      <p>The name FUNKE means <em>spark</em> in German. That moment when the engine turns over and everything comes alive. We built our fragrances around that feeling.</p>
+    </div>
+
+    <div class="funke-story-page__scents">
+      <div class="funke-story-page__scent" data-name="RIVIERA">
+        <div class="funke-story-page__scent-name">RIVIERA</div>
+        <p class="funke-story-page__scent-desc">Coastal corniche at golden hour. Coconut, bergamot, and warm cedarwood. For the drive that feels like a vacation.</p>
+      </div>
+      <div class="funke-story-page__scent" data-name="MONACO">
+        <div class="funke-story-page__scent-name">MONACO</div>
+        <p class="funke-story-page__scent-desc">Where the night never ends. Orange blossom, dahlia, and musk. For the drive that IS the destination.</p>
+      </div>
+    </div>
+
+    <div class="funke-story-page__body">
+      <p>Every FUNKE diffuser is built on a simple system — premium zinc alloy hardware that lives in your vent permanently, paired with refillable fragrance oils and cotton pads that keep your cabin smelling exactly how it should.</p>
+
+      <p>No cheap pine trees. No artificial sprays. Just premium fragrance engineered for the driver who demands more.</p>
+    </div>
+
+    <div class="funke-story-page__tagline">
+      <span class="funke-story-page__tagline-text">WHERE PERFORMANCE MEETS FRAGRANCE</span>
+    </div>
+
+    <div class="funke-story-page__cta-wrap">
+      <a href="/collections/all" class="funke-story-page__cta">SHOP THE COLLECTION</a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FUNKE Our Story",
+  "tag": "section",
+  "limit": 1,
+  "settings": [],
+  "presets": [
+    {
+      "name": "FUNKE Our Story"
+    }
+  ]
+}
+{% endschema %}

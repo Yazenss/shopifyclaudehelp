@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "contact": {
-      "type": "funke-contact",
+    "our-story": {
+      "type": "funke-our-story",
       "settings": {}
     }
   },
   "order": [
-    "contact"
+    "our-story"
   ]
 }

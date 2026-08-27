@@ -1,1 +1,60 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"newsletter":{"type":"newsletter","blocks":{"heading":{"type":"heading","settings":{"heading":"<strong>JOIN THE FUNKE COMMUNITY<\/strong>","heading_size":"h1"}},"paragraph":{"type":"paragraph","settings":{"text":"<p>Be first for new scents, exclusive drops, and member offers.<\/p>"}},"email-form":{"type":"email_form","settings":{}}},"block_order":["heading","paragraph","email-form"],"settings":{"color_scheme":"scheme-2","full_width":true,"padding_top":44,"padding_bottom":8}},"footer":{"type":"footer","settings":{"color_scheme":"scheme-2","newsletter_enable":false,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":false,"show_policy":true,"margin_top":0,"padding_top":44,"padding_bottom":48}}},"order":["newsletter","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {}
+        },
+        "nav": {
+          "type": "link_list",
+          "settings": {
+            "heading": "NAVIGATE",
+            "menu": "footer"
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "CONTACT",
+            "subtext": "<p>info@funkeshop.com</p><p>We respond within 24 hours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "nav",
+        "contact"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "newsletter_enable": false,
+        "newsletter_heading": "Join the FUNKE Community",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 56,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
