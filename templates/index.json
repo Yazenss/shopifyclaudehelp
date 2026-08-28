@@ -10,6 +10,12 @@
         "secondary_label": "Our Story"
       }
     },
+    "product-duo": {
+      "type": "funke-product-duo",
+      "settings": {
+        "eyebrow": "The Collection"
+      }
+    },
     "product-showcase": {
       "type": "funke-product-showcase",
       "settings": {
@@ -39,6 +45,7 @@
   },
   "order": [
     "hero",
+    "product-duo",
     "product-showcase",
     "brand-story",
     "scent-profiles",
