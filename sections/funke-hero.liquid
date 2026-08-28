@@ -1,7 +1,7 @@
 <style>
   .funke-hero {
     position: relative;
-    min-height: 92vh;
+    min-height: {{ section.settings.image_height }}vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -19,6 +19,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center {{ section.settings.image_position }};
   }
 
   .funke-hero__bg-placeholder {
@@ -230,7 +231,7 @@
 
   @media screen and (max-width: 749px) {
     .funke-hero {
-      min-height: 88vh;
+      min-height: {{ section.settings.image_height | minus: 4 }}vh;
       align-items: flex-end;
       padding-bottom: 6rem;
     }
@@ -320,6 +321,28 @@
       "id": "image",
       "label": "Hero Background Image",
       "info": "Recommended: dark luxury car interior, 2400×1350px"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Image Height",
+      "min": 55,
+      "max": 92,
+      "step": 1,
+      "unit": "vh",
+      "default": 72,
+      "info": "Lower values show more of the image with less cropping."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Focal Point",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "bottom", "label": "Bottom" }
+      ],
+      "default": "center"
     },
     {
       "type": "color",
