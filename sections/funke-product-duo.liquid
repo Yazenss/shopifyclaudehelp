@@ -43,10 +43,78 @@
     color: #C9A84C;
   }
 
-  .funke-duo__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+  .funke-duo__carousel {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  .funke-duo__viewport {
+    overflow: hidden;
+  }
+
+  .funke-duo__track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+  }
+
+  .funke-duo__slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .funke-duo__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6rem;
+    margin-top: 3.2rem;
+  }
+
+  .funke-duo__arrow {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin: 0;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: rgba(28, 28, 30, 0.55);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .funke-duo__arrow:hover,
+  .funke-duo__arrow:focus-visible {
+    color: #C9A84C;
+  }
+
+  .funke-duo__arrow--prev:hover { transform: translateX(-3px); }
+  .funke-duo__arrow--next:hover { transform: translateX(3px); }
+
+  .funke-duo__dots {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .funke-duo__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    padding: 0;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .funke-duo__dot.is-active {
+    background: #C9A84C;
+    transform: scale(1.15);
   }
 
   /* ---- Card ---- */
@@ -83,20 +151,6 @@
 
   .funke-duo-card:hover .funke-duo-card__img {
     transform: scale(1.03);
-  }
-
-  .funke-duo-card__placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #EDE8DC;
-  }
-
-  .funke-duo-card__placeholder svg {
-    opacity: 0.2;
-    width: 30%;
   }
 
   .funke-duo-card__body {
@@ -216,8 +270,8 @@
     .funke-duo__inner {
       padding: 0 2rem;
     }
-    .funke-duo__grid {
-      grid-template-columns: 1fr;
+    .funke-duo__controls {
+      margin-top: 2.4rem;
       gap: 2rem;
     }
     .funke-duo-card__name {
@@ -234,81 +288,161 @@
       <span class="funke-duo__header-text">{{ section.settings.eyebrow | default: 'The Collection' }}</span>
     </div>
 
-    <div class="funke-duo__grid">
-      {%- for i in (1..2) -%}
-        {%- assign pid = 'product_' | append: i -%}
-        {%- assign prod = section.settings[pid] -%}
+    <div
+      class="funke-duo__carousel"
+      data-duo-carousel
+      data-autoplay="{{ section.settings.enable_autoplay }}"
+      data-interval="{{ section.settings.autoplay_speed | times: 1000 }}"
+    >
+      <div class="funke-duo__viewport">
+        <div class="funke-duo__track" data-duo-track>
+          {%- for i in (1..2) -%}
+            {%- assign pid = 'product_' | append: i -%}
+            {%- assign prod = section.settings[pid] -%}
 
-        {%- if prod != blank -%}
-          <article class="funke-duo-card">
-            <a href="{{ prod.url }}" class="funke-duo-card__img-wrap" aria-label="{{ prod.title | escape }}">
-              {%- if prod.featured_image != blank -%}
-                <img
-                  src="{{ prod.featured_image | image_url: width: 900 }}"
-                  alt="{{ prod.featured_image.alt | escape | default: prod.title }}"
-                  class="funke-duo-card__img"
-                  loading="{% if i == 1 %}eager{% else %}lazy{% endif %}"
-                  width="900"
-                  height="900"
-                >
-              {%- else -%}
-                <div class="funke-duo-card__placeholder">
-                  {{ 'product-1' | placeholder_svg_tag }}
-                </div>
-              {%- endif -%}
-            </a>
-            <div class="funke-duo-card__body">
-              <span class="funke-duo-card__type">{{ prod.type | default: 'Car Fragrance' }}</span>
-              <a href="{{ prod.url }}" class="funke-duo-card__name">{{ prod.title }}</a>
-              <p class="funke-duo-card__desc">{{ prod.description | strip_html | truncate: 100 }}</p>
-              <div class="funke-duo-card__footer">
-                <div class="funke-duo-card__price-wrap">
-                  {%- if prod.available == false -%}
-                    <span class="funke-duo-card__preorder">Pre-order</span>
-                  {%- endif -%}
-                  <span class="funke-duo-card__price">{{ prod.price | money }}</span>
-                </div>
-                <a href="{{ prod.url }}" class="funke-duo-card__btn">VIEW PRODUCT</a>
+            {%- if prod != blank -%}
+              <div class="funke-duo__slide" data-duo-slide>
+                <article class="funke-duo-card">
+                  <a href="{{ prod.url }}" class="funke-duo-card__img-wrap" aria-label="{{ prod.title | escape }}">
+                    {%- if prod.featured_image != blank -%}
+                      <img
+                        src="{{ prod.featured_image | image_url: width: 900 }}"
+                        alt="{{ prod.featured_image.alt | escape | default: prod.title }}"
+                        class="funke-duo-card__img"
+                        loading="{% if i == 1 %}eager{% else %}lazy{% endif %}"
+                        width="900"
+                        height="900"
+                      >
+                    {%- endif -%}
+                  </a>
+                  <div class="funke-duo-card__body">
+                    <span class="funke-duo-card__type">{{ prod.type | default: 'Car Fragrance' }}</span>
+                    <a href="{{ prod.url }}" class="funke-duo-card__name">{{ prod.title }}</a>
+                    <p class="funke-duo-card__desc">{{ prod.description | strip_html | truncate: 100 }}</p>
+                    <div class="funke-duo-card__footer">
+                      <div class="funke-duo-card__price-wrap">
+                        {%- if prod.available == false -%}
+                          <span class="funke-duo-card__preorder">Pre-order</span>
+                        {%- endif -%}
+                        <span class="funke-duo-card__price">{{ prod.price | money }}</span>
+                      </div>
+                      <a href="{{ prod.url }}" class="funke-duo-card__btn">VIEW PRODUCT</a>
+                    </div>
+                  </div>
+                  <div class="funke-duo-card__gold-bar"></div>
+                </article>
               </div>
-            </div>
-            <div class="funke-duo-card__gold-bar"></div>
-          </article>
 
-        {%- else -%}
+            {%- else -%}
 
-          {%- assign fallback_titles = 'FUNKE Starter Kit,FUNKE Disc Refill' | split: ',' -%}
-          {%- assign fallback_types = 'Complete System,Disc Refill' | split: ',' -%}
-          {%- assign fallback_descs = 'Zinc alloy vent clip diffuser + fragrance oil + 3 cotton discs. Everything you need to start your FUNKE experience.,Premium cotton disc inserts for your FUNKE vent clip diffuser. Available in RIVIERA and MONACO.' | split: ',' -%}
-          {%- assign fallback_prices = '$49.00,$24.00' | split: ',' -%}
-          {%- assign idx = forloop.index0 -%}
+              {%- assign fallback_titles = 'FUNKE Starter Kit,FUNKE Disc Refill' | split: ',' -%}
+              {%- assign fallback_types = 'Complete System,Disc Refill' | split: ',' -%}
+              {%- assign fallback_descs = 'Zinc alloy vent clip diffuser + fragrance oil + 3 cotton discs. Everything you need to start your FUNKE experience.,Premium cotton disc inserts for your FUNKE vent clip diffuser. Available in RIVIERA and MONACO.' | split: ',' -%}
+              {%- assign fallback_prices = '$49.00,$24.00' | split: ',' -%}
+              {%- assign idx = forloop.index0 -%}
 
-          <article class="funke-duo-card">
-            <a href="{{ routes.all_products_collection_url }}" class="funke-duo-card__img-wrap">
-              <div class="funke-duo-card__placeholder">
-                {{ 'product-1' | placeholder_svg_tag }}
+              <div class="funke-duo__slide" data-duo-slide>
+                <article class="funke-duo-card">
+                  <a href="{{ routes.all_products_collection_url }}" class="funke-duo-card__img-wrap"></a>
+                  <div class="funke-duo-card__body">
+                    <span class="funke-duo-card__type">{{ fallback_types[idx] }}</span>
+                    <span class="funke-duo-card__name">{{ fallback_titles[idx] }}</span>
+                    <p class="funke-duo-card__desc">{{ fallback_descs[idx] }}</p>
+                    <div class="funke-duo-card__footer">
+                      <div class="funke-duo-card__price-wrap">
+                        <span class="funke-duo-card__preorder">Pre-order</span>
+                        <span class="funke-duo-card__price">{{ fallback_prices[idx] }}</span>
+                      </div>
+                      <a href="{{ routes.all_products_collection_url }}" class="funke-duo-card__btn">VIEW PRODUCT</a>
+                    </div>
+                  </div>
+                  <div class="funke-duo-card__gold-bar"></div>
+                </article>
               </div>
-            </a>
-            <div class="funke-duo-card__body">
-              <span class="funke-duo-card__type">{{ fallback_types[idx] }}</span>
-              <span class="funke-duo-card__name">{{ fallback_titles[idx] }}</span>
-              <p class="funke-duo-card__desc">{{ fallback_descs[idx] }}</p>
-              <div class="funke-duo-card__footer">
-                <div class="funke-duo-card__price-wrap">
-                  <span class="funke-duo-card__preorder">Pre-order</span>
-                  <span class="funke-duo-card__price">{{ fallback_prices[idx] }}</span>
-                </div>
-                <a href="{{ routes.all_products_collection_url }}" class="funke-duo-card__btn">VIEW PRODUCT</a>
-              </div>
-            </div>
-            <div class="funke-duo-card__gold-bar"></div>
-          </article>
 
-        {%- endif -%}
-      {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="funke-duo__controls">
+        <button type="button" class="funke-duo__arrow funke-duo__arrow--prev" data-duo-prev aria-label="Previous product">&larr;</button>
+        <div class="funke-duo__dots" data-duo-dots>
+          <button type="button" class="funke-duo__dot is-active" data-duo-dot="0" aria-label="Show slide 1" aria-current="true"></button>
+          <button type="button" class="funke-duo__dot" data-duo-dot="1" aria-label="Show slide 2" aria-current="false"></button>
+        </div>
+        <button type="button" class="funke-duo__arrow funke-duo__arrow--next" data-duo-next aria-label="Next product">&rarr;</button>
+      </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  (function () {
+    var carousels = document.querySelectorAll('[data-duo-carousel]');
+    carousels.forEach(function (carousel) {
+      if (carousel.dataset.duoInit) return;
+      carousel.dataset.duoInit = 'true';
+
+      var track = carousel.querySelector('[data-duo-track]');
+      var slides = Array.prototype.slice.call(carousel.querySelectorAll('[data-duo-slide]'));
+      var dots = Array.prototype.slice.call(carousel.querySelectorAll('[data-duo-dot]'));
+      var prevBtn = carousel.querySelector('[data-duo-prev]');
+      var nextBtn = carousel.querySelector('[data-duo-next]');
+      var total = slides.length;
+      var index = 0;
+      var timer = null;
+      var autoplay = carousel.dataset.autoplay === 'true';
+      var interval = parseInt(carousel.dataset.interval, 10) || 6000;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function render() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          var active = i === index;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+      }
+
+      function goTo(i) {
+        index = (i + total) % total;
+        render();
+      }
+
+      function next() { goTo(index + 1); }
+      function prev() { goTo(index - 1); }
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function start() {
+        if (!autoplay || reduceMotion || total < 2) return;
+        stop();
+        timer = setInterval(next, interval);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { prev(); stop(); start(); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { next(); stop(); start(); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); stop(); start(); });
+      });
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+
+      render();
+      start();
+    });
+  })();
+</script>
 
 {% schema %}
 {
@@ -336,6 +470,22 @@
       "id": "bg_color",
       "label": "Background Color",
       "default": "#F5F0E8"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Auto-advance slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Auto-advance Speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 6
     }
   ],
   "presets": [
