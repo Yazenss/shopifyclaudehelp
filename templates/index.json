@@ -27,17 +27,6 @@
         "secondary_link": ""
       }
     },
-    "product-duo": {
-      "type": "funke-product-duo",
-      "settings": {
-        "eyebrow": "The Collection",
-        "product_1": "",
-        "product_2": "",
-        "bg_color": "#f5f0e8",
-        "enable_autoplay": true,
-        "autoplay_speed": 6
-      }
-    },
     "product-showcase": {
       "type": "funke-product-showcase",
       "settings": {
@@ -71,7 +60,6 @@
   },
   "order": [
     "hero",
-    "product-duo",
     "product-showcase",
     "brand-story",
     "scent-profiles",
