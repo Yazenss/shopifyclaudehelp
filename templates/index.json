@@ -1,25 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "funke-hero",
       "settings": {
+        "image": "shopify://shop_images/PROD-12.jpg",
+        "image_height": 72,
+        "image_position": "center",
+        "overlay_color": "#1c1c1e",
+        "overlay_opacity": 20,
+        "overlay_direction": "left",
         "eyebrow": "Engineered for the drive",
         "title": "IGNITE YOUR DRIVE",
         "subtitle": "Premium car fragrances engineered for European car enthusiasts.",
         "button_label": "SHOP NOW",
-        "secondary_label": "Our Story"
+        "button_link": "",
+        "secondary_label": "Our Story",
+        "secondary_link": ""
       }
     },
     "product-duo": {
       "type": "funke-product-duo",
       "settings": {
-        "eyebrow": "The Collection"
+        "eyebrow": "The Collection",
+        "product_1": "",
+        "product_2": "",
+        "bg_color": "#f5f0e8",
+        "enable_autoplay": true,
+        "autoplay_speed": 6
       }
     },
     "product-showcase": {
       "type": "funke-product-showcase",
       "settings": {
-        "title": "THE COLLECTION"
+        "title": "THE COLLECTION",
+        "collection": "",
+        "view_all_link": ""
       }
     },
     "brand-story": {
@@ -27,7 +51,8 @@
       "settings": {
         "heading": "BORN FROM AN OBSESSION.",
         "text": "FUNKE was built for the drivers who care about every detail — from the stitching on the seats to the scent of the cabin. Where Performance Meets Fragrance.",
-        "cta_label": "OUR STORY"
+        "cta_label": "OUR STORY",
+        "cta_link": ""
       }
     },
     "scent-profiles": {
@@ -39,6 +64,7 @@
       "settings": {
         "title": "JOIN THE FUNKE COMMUNITY",
         "subtitle": "Be first to know about new scent drops and exclusive offers.",
+        "placeholder": "your@email.com",
         "button_label": "JOIN"
       }
     }
