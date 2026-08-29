@@ -210,8 +210,13 @@ a:hover {
   border-radius: 0 !important;
 }
 
-.card__content,
-.card__information {
+/* Scoped to the direct child .card__content (the real, visible content block).
+   Dawn also renders a second, accessibility-only .card__content nested inside
+   .card__inner that Dawn's own CSS stretches to fill the image box (position:
+   relative + flex-grow) and leaves transparent by design. An unscoped rule here
+   would paint that hidden layer opaque and cover the product image on top of it. */
+.card > .card__content,
+.card > .card__content .card__information {
   background: #F5F0E8 !important;
 }
 
