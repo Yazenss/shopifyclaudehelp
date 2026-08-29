@@ -62,7 +62,7 @@
     font-weight: 500;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: #C9A84C;
+    color: {{ section.settings.eyebrow_color | default: '#D9BC70' }};
   }
 
   .funke-hero__title {
@@ -379,6 +379,13 @@
       "id": "eyebrow",
       "label": "Eyebrow Text",
       "default": "Engineered for the drive"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Text Color",
+      "default": "#D9BC70",
+      "info": "Brand rule: gold family only. Keep within the gold range for readability against the hero photo — don't shift to white or cream (reserved for the headline)."
     },
     {
       "type": "text",
