@@ -71,7 +71,9 @@
     line-height: 0.88;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #F5F0E8;
+    /* !important required: assets/funke-custom.css forces all h1-h6 to charcoal
+       with !important site-wide; this section's own setting must win over it. */
+    color: {{ section.settings.heading_color | default: '#F5F0E8' }} !important;
     margin: 0 0 2.5rem;
     max-width: 90rem;
   }
@@ -383,6 +385,13 @@
       "id": "title",
       "label": "Headline",
       "default": "IGNITE YOUR DRIVE"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Headline Color",
+      "default": "#F5F0E8",
+      "info": "Must stay legible over the hero image/overlay. Cream works on dark photos; use charcoal only if the image is very light."
     },
     {
       "type": "textarea",
