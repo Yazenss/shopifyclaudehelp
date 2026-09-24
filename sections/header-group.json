@@ -17,7 +17,7 @@
         "funke_announce_1": {
           "type": "announcement",
           "settings": {
-            "text": "NOW TAKING PRE-ORDERS · FREE SHIPPING ON ORDERS OVER $40 · SHIPS WITHIN THE US",
+            "text": "NOW TAKING PRE-ORDERS · FREE SHIPPING ON ORDERS OF $40 OR MORE · SHIPS WITHIN THE US",
             "link": "shopify:\/\/collections\/all"
           }
         }
