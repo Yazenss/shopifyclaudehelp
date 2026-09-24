@@ -311,7 +311,7 @@
               <span class="funke-pcard__category">{{ product.type | default: 'Car Fragrance' }}</span>
               <a href="{{ product.url }}" class="funke-pcard__name">{{ product.title }}</a>
               <p class="funke-pcard__desc">{{ product.description | strip_html | truncate: 85 }}</p>
-              <span class="funke-preorder-badge">PRE-ORDER — Ships in 2-3 weeks</span>
+              <span class="funke-preorder-badge">PRE-ORDER</span>
               <div class="funke-pcard__footer">
                 <span class="funke-pcard__price">{{ product.price | money }}</span>
                 <a href="{{ product.url }}" class="funke-pcard__btn">VIEW PRODUCT</a>
@@ -323,7 +323,7 @@
       {%- else -%}
         {%- for i in (1..2) -%}
           {%- assign ptitles = 'FUNKE Starter Kit,FUNKE Disc Refill' | split: ',' -%}
-          {%- assign pdescs = 'Complete system. Zinc alloy vent clip + fragrance oil + 3 discs. Choose your scent.,Premium cotton disc inserts for your FUNKE vent clip diffuser. Choose RIVIERA or MONACO.' | split: ',' -%}
+          {%- assign pdescs = 'Complete system. Anodized aluminum vent clip + fragrance oil + 3 discs. Choose your scent.,Premium cotton disc inserts for your FUNKE vent clip diffuser. Choose RIVIERA or MONACO.' | split: ',' -%}
           <article class="funke-pcard">
             <div class="funke-pcard__image-wrap">
               <img
@@ -339,7 +339,7 @@
               <span class="funke-pcard__category">Car Fragrance</span>
               <span class="funke-pcard__name">{{ ptitles[forloop.index0] }}</span>
               <p class="funke-pcard__desc">{{ pdescs[forloop.index0] }}</p>
-              <span class="funke-preorder-badge">PRE-ORDER — Ships in 2-3 weeks</span>
+              <span class="funke-preorder-badge">PRE-ORDER</span>
               <div class="funke-pcard__footer">
                 <a href="/collections/all" class="funke-pcard__btn">VIEW PRODUCT</a>
               </div>
