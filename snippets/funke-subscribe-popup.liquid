@@ -1,0 +1,45 @@
+{% comment %}
+  Cart subscribe offer popup (Flux): before checkout when cart has Starter Kit
+  and no Disc Refill already on a selling plan. Default = decline (not pre-selected).
+  Always render markup + hardcoded Disc Refill variant IDs so cart-drawer AJAX
+  and missing all_products never leave intercept with nothing to show.
+  Kit product 8782419525810 is one-time only — never attach a selling plan to it.
+{% endcomment %}
+<div
+  id="FunkeSubscribePopup"
+  class="funke-subpop"
+  hidden
+  data-funke-subpop
+  data-starter-product-id="8782419525810"
+  data-refill-product-id="8782421131442"
+  data-starter-handle="funke-starter-kit"
+  data-refill-handle="funke-cotton-pad-refill"
+  data-selling-plan-id="8502608050"
+  data-variant-riviera="47355263713458"
+  data-variant-monaco="47355263746226"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="FunkeSubscribePopupTitle"
+>
+  <div class="funke-subpop__backdrop" data-funke-subpop-decline></div>
+  <div class="funke-subpop__panel">
+    <h2 id="FunkeSubscribePopupTitle" class="funke-subpop__title">Join the monthly Disc Refill club</h2>
+    <p class="funke-subpop__body">
+      Get your <strong>Starter Kit</strong> now, plus a <strong>Disc Refill every month</strong> for <strong>$9.99/mo</strong>.
+      Cancel anytime.
+    </p>
+    <ul class="funke-subpop__list">
+      <li>Starter Kit ships with this order</li>
+      <li>Monthly Disc Refill — $9.99/mo</li>
+      <li>Cancel anytime</li>
+    </ul>
+    <div class="funke-subpop__actions">
+      <button type="button" class="funke-subpop__btn funke-subpop__btn--primary" data-funke-subpop-accept>
+        Add subscription
+      </button>
+      <button type="button" class="funke-subpop__btn funke-subpop__btn--secondary" data-funke-subpop-decline>
+        No thanks, just the Starter Kit.
+      </button>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@
     "hero": {
       "type": "funke-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/PROD-12.jpg",
+        "image": "shopify://shop_images/PROD-12.jpg",
         "image_height": 72,
         "image_position": "center",
         "overlay_color": "#1c1c1e",
@@ -20,7 +20,7 @@
         "overlay_direction": "left",
         "eyebrow": "Engineered for the drive",
         "title": "IGNITE YOUR DRIVE",
-        "subtitle": "Premium car fragrances engineered for European cars — BMW, Mercedes, Audi, and Porsche.",
+        "subtitle": "Premium car fragrances engineered for European cars \u2014 BMW, Mercedes, Audi, and Porsche.",
         "button_label": "SHOP NOW",
         "button_link": "",
         "secondary_label": "Our Story",
@@ -39,7 +39,7 @@
       "type": "funke-brand-story",
       "settings": {
         "heading": "BORN FROM AN OBSESSION.",
-        "text": "FUNKE was built for the drivers who care about every detail — from the stitching on the seats to the scent of the cabin. Where Performance Meets Fragrance.",
+        "text": "FUNKE was built for the drivers who care about every detail \u2014 from the stitching on the seats to the scent of the cabin. Where Performance Meets Fragrance. We ship within the United States.",
         "cta_label": "OUR STORY",
         "cta_link": ""
       }
