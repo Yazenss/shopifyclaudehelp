@@ -780,3 +780,136 @@ img.header__heading-logo {
   margin-bottom: 1.6rem;
   text-align: center;
 }
+
+
+/* ---- FREE SHIPPING PROGRESS ---- */
+.funke-freeship {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #1a1a1a;
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  background: rgba(201, 168, 76, 0.08);
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.funke-freeship__primary,
+.funke-freeship__unlocked {
+  margin: 0 0 0.4rem;
+  font-weight: 500;
+}
+.funke-freeship__secondary {
+  margin: 0 0 0.4rem;
+  color: #444;
+}
+.funke-freeship__us {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #888;
+}
+.funke-freeship__link {
+  color: #C9A84C;
+  text-decoration: underline;
+}
+.funke-freeship__bar {
+  margin-top: 0.9rem;
+  height: 4px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.funke-freeship__bar-fill {
+  display: block;
+  height: 100%;
+  background: #C9A84C;
+  transition: width 0.3s ease;
+}
+
+.funke-free-ship-promo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
+  text-align: center;
+  margin: 0.6rem 0 0;
+}
+
+/* ---- SUBSCRIBE POPUP ---- */
+.funke-subpop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+}
+.funke-subpop[hidden] {
+  display: none !important;
+}
+.funke-subpop__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+.funke-subpop__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  width: 100%;
+  background: #fff;
+  color: #111;
+  padding: 2.4rem 2rem;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  font-family: 'Inter', sans-serif;
+}
+.funke-subpop__title {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.funke-subpop__body {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+.funke-subpop__list {
+  margin: 0 0 1.6rem;
+  padding-left: 1.4rem;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: #333;
+}
+.funke-subpop__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.funke-subpop__btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+}
+.funke-subpop__btn--secondary {
+  background: transparent;
+  color: #111;
+}
+.funke-subpop__btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+html.funke-subpop-open {
+  overflow: hidden;
+}
