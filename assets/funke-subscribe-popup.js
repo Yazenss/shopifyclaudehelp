@@ -242,7 +242,7 @@
   function onCheckoutSubmit(e) {
     var form = e.target;
     if (!form || !form.matches) return;
-    if (!(form.id === 'CartDrawer-Form' || form.id === 'cart' || form.getAttribute('action') === '/cart')) return;
+    if (!(form.id === 'CartDrawer-Form' || form.id === 'cart' || form.id === 'cart-notification-form' || form.getAttribute('action') === '/cart')) return;
     // Only intercept when checkout is the submitter intent
     var submitter = e.submitter;
     if (submitter && submitter.name && submitter.name !== 'checkout') return;

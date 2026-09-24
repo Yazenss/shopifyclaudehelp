@@ -378,5 +378,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {% comment %} Funke subscribe popup: global so notification-cart checkout is intercepted {% endcomment %}
+    {% render 'funke-subscribe-popup' %}
+    <script src="{{ 'funke-subscribe-popup.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
