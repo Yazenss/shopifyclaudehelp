@@ -1,0 +1,36 @@
+{% comment %}
+  Funke cart free-shipping progress ($40 threshold, US-only).
+  Exact copy per OUT_ink_cart_freeship_spec.md
+{% endcomment %}
+{%- liquid
+  assign threshold_cents = 4000
+  assign cart_subtotal = cart.total_price
+  assign amount_remaining = threshold_cents | minus: cart_subtotal
+  if amount_remaining < 0
+    assign amount_remaining = 0
+  endif
+  assign refill = all_products['funke-cotton-pad-refill']
+-%}
+{%- unless cart == empty -%}
+  <div class="funke-freeship" role="status">
+    {%- if amount_remaining > 0 -%}
+      <p class="funke-freeship__primary">You're <strong>{{ amount_remaining | money }}</strong> away from free shipping.</p>
+      <p class="funke-freeship__secondary">
+        Add a
+        {%- if refill != blank -%}
+          <a href="{{ refill.url }}" class="funke-freeship__link">Disc Refill</a>
+        {%- else -%}
+          Disc Refill
+        {%- endif %}
+        (~$12) to get closer — or unlock free shipping.
+      </p>
+      <p class="funke-freeship__us">Ships within the US only.</p>
+      <div class="funke-freeship__bar" aria-hidden="true">
+        <span class="funke-freeship__bar-fill" style="width: {% if cart_subtotal >= threshold_cents %}100{% else %}{{ cart_subtotal | times: 100.0 | divided_by: threshold_cents }}{% endif %}%;"></span>
+      </div>
+    {%- else -%}
+      <p class="funke-freeship__unlocked">You've unlocked <strong>free shipping</strong>.</p>
+      <p class="funke-freeship__us">Ships within the US only.</p>
+    {%- endif -%}
+  </div>
+{%- endunless -%}
